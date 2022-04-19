@@ -1,59 +1,28 @@
-/* Ramos */
-var ramos_rosas_tallo_largo >= 0;
-var ramos_rosas_amarillas >= 0;
-var ramos_rosas_rojas >= 0;
-var ramos_crisantemos >= 0;
-var ramos_chicos >= 0;
-var ramos_medianos >= 0;
-var ramos_grandes >= 0;
+# Conjuntos de datos
+set anchos;
+set configuraciones;
 
-/* Flores */
-var rosas_tallo_largo >= 0;
-var rosas_amarillas >= 0;
-var rosas_rojas >= 0;
-var crisantemos >= 0;
-var margaritas >= 0;
+# Variables
+var configuracion{i in configuraciones} >= 0;
 
-/* Armado de Ramos */
-s.t. arm1: rosas_tallo_largo >= ramos_rosas_tallo_largo ;
-s.t. arm2: rosas_amarillas >= 9 * ramos_rosas_amarillas ;
-s.t. arm3: rosas_rojas >= 7 * ramos_rosas_rojas
-  + 10 * ramos_medianos
-  + 15 * ramos_grandes;
-s.t. arm4: crisantemos >= 18 * ramos_crisantemos
-  + 6 * ramos_chicos
-  + 10 * ramos_medianos
-  + 10 * ramos_grandes;
-s.t. arm5: margaritas >=  8 * ramos_chicos
-  + 10 * ramos_medianos
-  + 15 * ramos_grandes;
+# Valores de datos;
+param Len;
+param ancho{i in anchos};
+param produccion{j in configuraciones, i in anchos};
+param demanda{i in anchos};
 
-/* Demanda Maxima */
-s.t. max_ramos_rosas_tallo_largo: ramos_rosas_tallo_largo <= 650;
-s.t. max_ramos_rosas_amarillas: ramos_rosas_amarillas <= 350;
-s.t. max_ramos_rosas_rojas: ramos_rosas_rojas <= 250;
-s.t. max_ramos_crisantemos: ramos_crisantemos <= 600;
-s.t. max_ramos_chicos: ramos_chicos <= 1100;
-s.t. max_ramos_medianos: ramos_medianos <= 990;
-s.t. max_ramos_grandes: ramos_grandes <= 625;
+# Produccion
+var L{i in anchos} >= 0;
 
-/* Functional */
-var raw_gain;
-s.t. _raw_gain: raw_gain = ramos_rosas_tallo_largo * 3
-  + ramos_rosas_amarillas * 10
-  + ramos_rosas_rojas * 8
-  + ramos_crisantemos * 3
-  + ramos_chicos * 2
-  + ramos_medianos * 4
-  + ramos_grandes * 6;
+s.t. prodL{i in anchos}: L[i] = sum{ j in configuraciones} configuracion[j] * produccion[j,i];
 
-var costs;
-s.t. _costs: costs = rosas_tallo_largo * 20 / 20 
-  + rosas_amarillas * 20 / 50 
-  + rosas_rojas * 10 / 50 
-  + crisantemos * 5 / 100 
-  + margaritas * 3 / 100 ;
+var DES >= 0;
+s.t. prodDES: DES = sum{ j in configuraciones} ( configuracion[j] * ( Len - sum{ i in anchos} ancho[i] * produccion[j,i] ) );
 
-maximize z: raw_gain - costs;
+# Demanda
 
-end;
+s.t. min{i in anchos}: L[i] >= demanda[i];
+
+# Funcional
+
+minimize z: DES;

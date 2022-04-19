@@ -1,0 +1,17 @@
+set anchos := 64 60 35;
+set configuraciones := 1A64_1A60 1A64_1A35 2A60 1A60_1A35 3A35;
+
+param Len := 125;
+param ancho := 64 64 60 60 35 35;
+
+param produccion: 64 60 35 :=
+  1A64_1A60 1 1 0
+  1A64_1A35 1 0 1
+  2A60 0 2 0
+  1A60_1A35 0 1 1
+  3A35 0 0 3;
+
+param demanda :=
+  64 18000
+  60 9000
+  35 9000;
