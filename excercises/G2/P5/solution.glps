@@ -1,0 +1,47 @@
+Problem:    model
+Rows:       7
+Columns:    6
+Non-zeros:  14
+Status:     OPTIMAL
+Objective:  z = 242200 (MAXimum)
+
+   No.   Row name   St   Activity     Lower bound   Upper bound    Marginal
+------ ------------ -- ------------- ------------- ------------- -------------
+     1 sn_production
+                    NS             0            -0             =          10.5 
+     2 sc_production
+                    NS             0            -0             =            15 
+     3 min_sn       NL         10000         10000                        -0.5 
+     4 min_sc       B           9480          9000               
+     5 mr_total     NL          -180          -180                        -840 
+     6 ml_total     NL          -200          -200                        -480 
+     7 z            B         242200                             
+
+   No. Column name  St   Activity     Lower bound   Upper bound    Marginal
+------ ------------ -- ------------- ------------- ------------- -------------
+     1 MR_SN        B            125             0               
+     2 MR_SC        B             55             0               
+     3 ML_SN        NL             0             0                        -312 
+     4 ML_SC        B            200             0               
+     5 T_SN         B          10000             0               
+     6 T_SC         B           9480             0               
+
+Karush-Kuhn-Tucker optimality conditions:
+
+KKT.PE: max.abs.err = 1.82e-12 on row 3
+        max.rel.err = 9.09e-17 on row 3
+        High quality
+
+KKT.PB: max.abs.err = 0.00e+00 on row 0
+        max.rel.err = 0.00e+00 on row 0
+        High quality
+
+KKT.DE: max.abs.err = 1.14e-13 on column 1
+        max.rel.err = 6.76e-17 on column 1
+        High quality
+
+KKT.DB: max.abs.err = 0.00e+00 on row 0
+        max.rel.err = 0.00e+00 on row 0
+        High quality
+
+End of output

@@ -1,0 +1,15 @@
+/* Variable Declaration */
+var M >= 0;
+var N >= 0;
+
+/* Functional */
+minimize z: M * 0.01 + N * 0.004 ;
+
+/* Restrictions */
+
+s.t. A: M * 100 >= 400;
+s.t. B: N * 100 >= 600;
+s.t. C: M * 100 + N * 200 >= 2000;
+s.t. D: M * 200 + N * 100 >= 1700;
+
+end;

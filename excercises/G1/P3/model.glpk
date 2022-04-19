@@ -1,0 +1,15 @@
+/* Variable Declaration */
+var PA >= 0;
+var PB >= 0;
+
+/* Functional */
+maximize z: PA * 12 + PB * 8 ;
+
+/* Restrictions */
+
+s.t. MinPA: PA >= 50;
+s.t. MinPB: PB >= 4 * PA;
+s.t. TM1: PA + 0.4 * PB <= 200;
+s.t. TM2: PA * 0.5 + PB <= 200;
+
+end;

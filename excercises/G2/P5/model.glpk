@@ -1,0 +1,32 @@
+/* Variables */
+var MR_SN >= 0;
+var MR_SC >= 0;
+var ML_SN >= 0;
+var ML_SC >= 0;
+
+var T_SN >= 0;
+var T_SC >= 0;
+
+/* Constants */
+param R := 10;
+param L := 4;
+
+param SN := 10;
+param SC := 15;
+
+/* Production */
+s.t. sn_production: T_SN = ( R * MR_SN + 2 * ML_SN ) * 8;
+s.t. sc_production: T_SC = ( 7 * MR_SC + L * ML_SC ) * 8;
+
+s.t. min_sn: T_SN >= 10000;
+s.t. min_sc: T_SC >= 9000;
+
+/* Machines */
+s.t. mr_total: 180 >= MR_SN + MR_SC;
+s.t. ml_total: 200 >= ML_SN + ML_SC;
+
+/* Functional */
+
+maximize z: T_SN * SN + T_SC * SC;
+
+end;

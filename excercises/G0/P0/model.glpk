@@ -1,0 +1,21 @@
+/* Variable Declaration */
+var cars >= 0;
+var trucks >= 0;
+
+/* Functional */
+maximize z: cars * 150000 + trucks * 1250000 ;
+
+/* Restrictions */
+
+/* Departments */
+s.t. stamping: cars / 25000 + trucks / 35000 <= 1;
+s.t. motorAssembly: cars / 33333 + trucks / 16667 <= 1;
+s.t. carAssembly: cars <= 25000;
+s.t. truckAssembly: trucks <= 15000;
+
+/* Demand */
+s.t. minCars: cars >= 12000;
+s.t. maxCars: cars <= 18000;
+s.t. minTrucks: trucks >= 8000;
+
+end;

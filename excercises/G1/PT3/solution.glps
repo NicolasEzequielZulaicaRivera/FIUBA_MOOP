@@ -1,0 +1,38 @@
+Problem:    model
+Rows:       4
+Columns:    2
+Non-zeros:  8
+Status:     OPTIMAL
+Objective:  z = 101.2 (MINimum)
+
+   No.   Row name   St   Activity     Lower bound   Upper bound    Marginal
+------ ------------ -- ------------- ------------- ------------- -------------
+     1 z            B          101.2                             
+     2 maxAdditives NU           0.5                         0.5           -94 
+     3 minAdditives B            0.9           0.5               
+     4 octane       NL             6             6                        24.7 
+
+   No. Column name  St   Activity     Lower bound   Upper bound    Marginal
+------ ------------ -- ------------- ------------- ------------- -------------
+     1 A1           B            0.4             0               
+     2 A2           B            0.1             0               
+
+Karush-Kuhn-Tucker optimality conditions:
+
+KKT.PE: max.abs.err = 8.88e-16 on row 4
+        max.rel.err = 6.83e-17 on row 4
+        High quality
+
+KKT.PB: max.abs.err = 0.00e+00 on row 0
+        max.rel.err = 0.00e+00 on row 0
+        High quality
+
+KKT.DE: max.abs.err = 5.68e-14 on column 1
+        max.rel.err = 1.15e-16 on column 1
+        High quality
+
+KKT.DB: max.abs.err = 0.00e+00 on row 0
+        max.rel.err = 0.00e+00 on row 0
+        High quality
+
+End of output

@@ -1,0 +1,14 @@
+/* Variable Declaration */
+var M >= 0;
+param P := 10;
+param MAQ := 200;
+
+/* Functional */
+maximize z: M * P;
+
+/* Restrictions */
+s.t. minM: M >= 70 + 110;
+s.t. machineTime: M * 2 <= 2 * MAQ;
+s.t. rawMatter: M * 1.5 <= 2 * 150;
+
+end;

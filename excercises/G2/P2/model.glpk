@@ -1,0 +1,54 @@
+/* Alloys */
+var A >= 0;
+var B >= 0;
+
+param priceA := 60;
+param priceB := 50;
+
+param minMixToBeAlloy := 0.01;
+
+/* Alloy A Composition */
+var CuA >= 0;
+var MnA >= 0;
+var SnA >= 0;
+var ZnA >= 0;
+var OtherA >= 0;
+
+s.t. maxCuA: CuA <= 0.8 * A;
+s.t. maxSnA: SnA <= 0.3 * A;
+s.t. minZnA: ZnA >= 0.5 * A;
+s.t. minMixToBeAlloyA: A * (1 - minMixToBeAlloy) >= ZnA;
+s.t. totalA: A = CuA + MnA + SnA + ZnA + OtherA;
+
+/* Alloy B Composition */
+var CuB >= 0;
+var MnB >= 0;
+var SnB >= 0;
+var ZnB >= 0;
+var OtherB >= 0;
+
+s.t. minSnB: SnB >= 0.4 * B;
+s.t. maxSnB: SnB <= 0.6 * B;
+s.t. minMnB: MnB >= 0.3 * B;
+s.t. maxZnB: ZnB <= 0.7 * B;
+s.t. totalB: B = CuB + MnB + SnB + ZnB + OtherB;
+
+/* Mineral Extraction */
+var MiSA >= 0; /* Mineral Sierra Alta   */
+var MiSC >= 0; /* Mineral Sierra Chica  */
+var MiEA >= 0; /* Mineral El Abra       */
+
+s.t. extractedCu: 0.2 * MiSA + 0.1 * MiSC + 0.05 * MiEA >= CuA + CuB;
+s.t. extractedMn: 0.1 * MiSA + 0.2 * MiSC + 0.05 * MiEA >= MnA + MnB;
+s.t. extractedSn: 0.3 * MiSA + 0.3 * MiSC + 0.70 * MiEA >= SnA + SnB;
+s.t. extractedZn: 0.3 * MiSA + 0.3 * MiSC + 0.20 * MiEA >= ZnA + ZnB;
+s.t. extractedOther: 0.1 * MiSA + 0.3 * MiSC >= OtherA + OtherB;
+
+s.t. maxMiSA: MiSA <= 1000;
+s.t. maxMiSC: MiSC <= 2000;
+s.t. maxMiEA: MiEA <= 3000;
+
+/* Functional */
+maximize z: A * priceA + B * priceB - MiSA * 10 - MiSC * 40 - MiEA * 50;
+
+end;

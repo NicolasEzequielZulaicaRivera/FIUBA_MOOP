@@ -1,0 +1,12 @@
+/* Variable Declaration & CNN */
+var PA >= 0;
+var PB >= 0;
+
+/* Functional */
+maximize z: 1200 * PA + 400 * PB;
+
+/* Restrictions */
+s.t. alcohol: PA * 3 + PB * 2/3 >= 40;
+s.t. hexane: PA + PB * 2 <= 20;
+
+end;

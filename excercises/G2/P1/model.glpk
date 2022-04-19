@@ -1,0 +1,28 @@
+/* Products */
+var A >= 0;
+var B >= 0;
+var C >= 0;
+
+/* Restrictions */
+s.t. minB: B >= 10;
+
+/* Wool */
+s.t. normalWool: B * 1.8 <= 36;
+s.t. enhancedWool: A * 1.6 + B * 1.2 <= 20;
+
+/* Machines */
+var B1 >= 0;
+var B2 >= 0;
+
+s.t. TotalB: B1 + B2 = B;
+
+s.t. machineTime1: 5 * A + 6 * B1 <= 80;
+s.t. machineTime2: 4 * B2 + 4 * C <= 80;
+
+/* Functional */
+var gain;
+s.t. _gain: gain = A * 10 + B * 15 + C * 18;
+
+maximize z: gain;
+
+end;

@@ -1,0 +1,13 @@
+/* Variable Declaration */
+var P1 >= 0; // Cantidad a producir de Producto 1 cada mes [ u/mes ]
+var P2 >= 0; // Cantidad a producir de Producto 2 cada mes [ u/mes ]
+
+/* Functional */
+maximize z: 60 * P1 + 50 * P2;
+
+/* Restrictions */
+s.t. MaqA: P1 * 2 + P2 * 4 <= 80;
+s.t. MaqB: P1 * 3 + P2 * 2 <= 60;
+s.t. MaqC: P1 * 4 + P2 * 2 <= 100;
+
+end;

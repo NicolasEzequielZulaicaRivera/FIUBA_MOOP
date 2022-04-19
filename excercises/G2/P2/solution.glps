@@ -1,0 +1,68 @@
+Problem:    model
+Rows:       19
+Columns:    15
+Non-zeros:  60
+Status:     OPTIMAL
+Objective:  z = 98615.38462 (MAXimum)
+
+   No.   Row name   St   Activity     Lower bound   Upper bound    Marginal
+------ ------------ -- ------------- ------------- ------------- -------------
+     1 maxCuA       B       -1258.46                          -0 
+     2 maxSnA       B       -558.462                          -0 
+     3 minZnA       NL             0            -0                    -38.4615 
+     4 minMixToBeAlloyA
+                    B        912.154            -0               
+     5 totalA       NS             0            -0             =       40.7692 
+     6 minSnB       B        330.769            -0               
+     7 maxSnB       B       -7.69231                          -0 
+     8 minMnB       NL             0            -0                    -30.7692 
+     9 maxZnB       B       -1184.62                          -0 
+    10 totalB       NS             0            -0             =       40.7692 
+    11 extractedCu  NL             0            -0                    -40.7692 
+    12 extractedMn  NL             0            -0                    -71.5385 
+    13 extractedSn  NL             0            -0                    -40.7692 
+    14 extractedZn  NL             0            -0                    -79.2308 
+    15 extractedOther
+                    NL             0            -0                    -40.7692 
+    16 maxMiSA      NU          1000                        1000       45.3846 
+    17 maxMiSC      NU          2000                        2000       26.6154 
+    18 maxMiEA      B        153.846                        3000 
+    19 z            B        98615.4                             
+
+   No. Column name  St   Activity     Lower bound   Upper bound    Marginal
+------ ------------ -- ------------- ------------- ------------- -------------
+     1 A            B        1861.54             0               
+     2 B            B        1692.31             0               
+     3 CuA          B        230.769             0               
+     4 MnA          NL             0             0                    -30.7692 
+     5 SnA          NL             0             0                       < eps
+     6 ZnA          B        930.769             0               
+     7 OtherA       B            700             0               
+     8 CuB          B        176.923             0               
+     9 MnB          B        507.692             0               
+    10 SnB          B        1007.69             0               
+    11 ZnB          NL             0             0                    -38.4615 
+    12 OtherB       NL             0             0                       < eps
+    13 MiSA         B           1000             0               
+    14 MiSC         B           2000             0               
+    15 MiEA         B        153.846             0               
+
+Karush-Kuhn-Tucker optimality conditions:
+
+KKT.PE: max.abs.err = 2.91e-11 on row 19
+        max.rel.err = 3.36e-16 on row 12
+        High quality
+
+KKT.PB: max.abs.err = 0.00e+00 on row 0
+        max.rel.err = 0.00e+00 on row 0
+        High quality
+
+KKT.DE: max.abs.err = 2.84e-14 on column 8
+        max.rel.err = 3.44e-16 on column 8
+        High quality
+
+KKT.DB: max.abs.err = 3.55e-14 on column 5
+        max.rel.err = 3.55e-14 on column 5
+        High quality
+
+End of output

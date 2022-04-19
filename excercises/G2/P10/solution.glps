@@ -1,0 +1,76 @@
+Problem:    model
+Rows:       15
+Columns:    14
+Non-zeros:  40
+Status:     OPTIMAL
+Objective:  z = 10525.25 (MAXimum)
+
+   No.   Row name   St   Activity     Lower bound   Upper bound    Marginal
+------ ------------ -- ------------- ------------- ------------- -------------
+     1 arm1         NL             0            -0                          -1 
+     2 arm2         NL             0            -0                        -0.4 
+     3 arm3         NL             0            -0                        -0.2 
+     4 arm4         NL             0            -0                       -0.05 
+     5 arm5         NL             0            -0                       -0.03 
+     6 max_ramos_rosas_tallo_largo
+                    NU           650                         650             2 
+     7 max_ramos_rosas_amarillas
+                    NU           350                         350           6.4 
+     8 max_ramos_rosas_rojas
+                    NU           250                         250           6.6 
+     9 max_ramos_crisantemos
+                    NU           600                         600           2.1 
+    10 max_ramos_chicos
+                    NU          1100                        1100          1.46 
+    11 max_ramos_medianos
+                    NU           990                         990           1.2 
+    12 max_ramos_grandes
+                    NU           625                         625          2.05 
+    13 _raw_gain    NS             0            -0             =             1 
+    14 _costs       NS             0            -0             =            -1 
+    15 z            B        10525.2                             
+
+   No. Column name  St   Activity     Lower bound   Upper bound    Marginal
+------ ------------ -- ------------- ------------- ------------- -------------
+     1 ramos_rosas_tallo_largo
+                    B            650             0               
+     2 ramos_rosas_amarillas
+                    B            350             0               
+     3 ramos_rosas_rojas
+                    B            250             0               
+     4 ramos_crisantemos
+                    B            600             0               
+     5 ramos_chicos B           1100             0               
+     6 ramos_medianos
+                    B            990             0               
+     7 ramos_grandes
+                    B            625             0               
+     8 rosas_tallo_largo
+                    B            650             0               
+     9 rosas_amarillas
+                    B           3150             0               
+    10 rosas_rojas  B          21025             0               
+    11 crisantemos  B          33550             0               
+    12 margaritas   B          28075             0               
+    13 raw_gain     B          19160                             
+    14 costs        B        8634.75                             
+
+Karush-Kuhn-Tucker optimality conditions:
+
+KKT.PE: max.abs.err = 0.00e+00 on row 0
+        max.rel.err = 0.00e+00 on row 0
+        High quality
+
+KKT.PB: max.abs.err = 0.00e+00 on row 0
+        max.rel.err = 0.00e+00 on row 0
+        High quality
+
+KKT.DE: max.abs.err = 0.00e+00 on column 0
+        max.rel.err = 0.00e+00 on column 0
+        High quality
+
+KKT.DB: max.abs.err = 0.00e+00 on row 0
+        max.rel.err = 0.00e+00 on row 0
+        High quality
+
+End of output

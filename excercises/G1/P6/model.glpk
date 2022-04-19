@@ -1,0 +1,14 @@
+/* Variable Declaration */
+var X1 >= 0;
+var X2 >= 0;
+
+/* Functional */
+maximize z: X1 * 8 + X2 * 4 ;
+
+/* Restrictions */
+
+s.t. R1: X1 * 4 - X2 * 2 <= 4;
+s.t. R2: X1 * 4 + X2 * 2 <= 8;
+s.t. R3: X1 + X2 >= 1;
+
+end;

@@ -1,0 +1,13 @@
+/* Variable Declaration */
+var A1 >= 0;
+var A2 >= 0;
+
+/* Functional */
+minimize z: A1 * 153 + A2 * 400 ;
+
+/* Restrictions */
+s.t. maxAdditives: A1 + A2 <= 1/2;
+s.t. minAdditives: 2 * A1 + A2 >= 1/2;
+s.t. octane: 84 + A1 * 10 + A2 * 20 >= 90;
+
+end;
