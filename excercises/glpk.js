@@ -3,6 +3,7 @@ const { exec } = require("child_process");
 
 const guide = process.argv[2];
 const problem = process.argv[3];
+const data = process.argv[4];
 
 // Could implement to run all exercises or all in a a guide
 // Right now it is not necessary
@@ -14,8 +15,9 @@ if (!guide || !problem) {
 }
 
 const dst_dir = `${__dirname}/G${guide}/P${problem}`;
+let extra = data ? `-d "${dst_dir}/${data}.dat"` : "";
 exec(
-  `glpsol -m "${dst_dir}/model.glpk" -o "${dst_dir}/solution.glps"`,
+  `glpsol -m "${dst_dir}/model.glpk" -o "${dst_dir}/solution.glps" ${extra}`,
   (error, stdout, stderr) => {
     if (error) {
       console.log(`\x1b[31m${error.message}\x1b[0m`);
