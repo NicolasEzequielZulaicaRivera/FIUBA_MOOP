@@ -24,7 +24,8 @@
     - [Solución](#solución)
   - [Informe de Resultados](#informe-de-resultados)
   - [Apendices](#apendices)
-    - [Configuraciones óptimas](#configuraciones-óptimas)
+
+<!-- pagebreak -->
 
 #### Enunciado
 
@@ -50,6 +51,8 @@ Los cortes se efectúan en forma longitudinal y lo que se entrega **no necesita 
 Esto significa que no importa la cantidad de bobinas que se corten con una determinada disposición de cuchillas, sino la cantidad de metros de largo que se obtienen de esa forma.
 Se puede solicitar al depósito bobinas con la longitud que se quiera pero siempre en 215 cm de ancho.
 
+<!-- pagebreak -->
+
 #### Análisis de la situación problemática
 
 @import "diagram.svg"
@@ -72,6 +75,8 @@ Se puede solicitar al depósito bobinas con la longitud que se quiera pero siemp
 
 > determinar las longitudes de rollo a cortar en cada una de las combinaciones de cuchillas ( y metros de cada tipo de rollo , m2 de desperdicio) para minimizar el desperdicio en un periodo de tiempo
 
+<!-- pagebreak -->
+
 #### Hipótesis y Supuestos
 
 - No hay costos ni contratiempos mas allá de los mencionados y se poseen todos los recursos necesarios `Certeza`
@@ -90,6 +95,8 @@ Se puede solicitar al depósito bobinas con la longitud que se quiera pero siemp
 - No se puede cortar en forma transversal, el largo y ancho no son intercambiables o no poseemos las herramientas para cortar transversalmente
   - de modo que no se podría aprovechar un sobrante mas largo que algún ancho para obtener un corte comerciable
   - en caso contrario podría plantearse una situación trivial sin perdidas
+
+<!-- pagebreak -->
 
 #### Definición de variables
 
@@ -113,6 +120,8 @@ Se puede solicitar al depósito bobinas con la longitud que se quiera pero siemp
 - `minA64` [m] : longitud minima demandada de rollo de ancho 64 ( = 18km )
 - `minA60` [m] : longitud minima demandada de rollo de ancho 60 ( = 9km )
 - `minA35` [m] : longitud minima demandada de rollo de ancho 35 ( = 9km )
+
+<!-- pagebreak -->
 
 #### Modelo de Programación Lineal Continua
 
@@ -141,6 +150,8 @@ Se puede solicitar al depósito bobinas con la longitud que se quiera pero siemp
 
 Z(min) = DES
 
+<!-- pagebreak -->
+
 #### Resolución por software
 
 ##### Datos
@@ -151,9 +162,13 @@ Z(min) = DES
 
 @import "model.glpk" {as="java"}
 
+<!-- pagebreak -->
+
 ##### Solución
 
 @import "solution.glps" {as="java"}
+
+<!-- pagebreak -->
 
 #### Informe de Resultados
 
@@ -169,13 +184,16 @@ De modo que se obtendrá:
 - 9km de rollo ancho 35cm
 - **78000 m2 de desperdicio**
 
+<!-- pagebreak -->
+
 #### Apendices
 
-##### Configuraciones óptimas
-
-Las configuraciones óptimas se obtuvieron a partir del siguiente script:
-
-@import "group.js" {as="javascript", cmd="false"}
+- `diagram.svg`: imagen del diagrama
+- `data.dat`: archivo de datos del modelo
+- `model.glpk`: archivo de modelo de GLPK
+- `solution.glps`: salida de la corrida del modelo
+- `group.js`: script para obtener las configuraciones
+- `excercise.html`: informe en formato web
 
 <!--
  #### Redacción y Presentación
