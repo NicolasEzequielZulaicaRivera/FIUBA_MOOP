@@ -1,67 +1,159 @@
-### Problema 10
+### Problema 30
+
+#### Tabla de Contenido
+
+- [Problema 30](#problema-30)
+  - [Tabla de Contenido](#tabla-de-contenido)
+  - [Enunciado](#enunciado)
+  - [Análisis de la situación problemática](#análisis-de-la-situación-problemática)
+  - [Objetivo](#objetivo)
+  - [Hipótesis y Supuestos](#hipótesis-y-supuestos)
+  - [Definición de variables](#definición-de-variables)
+    - [Variables principales](#variables-principales)
+    - [Auxiliares / Derivadas](#auxiliares--derivadas)
+    - [Constantes](#constantes)
+  - [Modelo de Programación Lineal Continua](#modelo-de-programación-lineal-continua)
+    - [Constantes](#constantes-1)
+    - [Variables](#variables)
+    - [Producción](#producción)
+    - [Demandas mínimas](#demandas-mínimas)
+    - [Funcional](#funcional)
+  - [Resolución por software](#resolución-por-software)
+    - [Datos](#datos)
+    - [Modelo](#modelo)
+    - [Solución](#solución)
+  - [Informe de Resultados](#informe-de-resultados)
+  - [Apendices](#apendices)
+    - [Configuraciones óptimas](#configuraciones-óptimas)
 
 #### Enunciado
 
-Un amigo florista se dedica a comprar flores al por mayor en un mercado.
+De Profundis, una empresa fabricante de galletitas, decide hacer una promoción vendiendo en bolsas sus productos de la linea “Teatro” (Anton, William, Cervantes, Molière).
 
-Con esas flores arma ramos que vende al público. Los precios actuales, por cada atado de flores (así como la cantidad de flores por atado), son los siguientes:
+A continuación indicamos los datos de las bolsas a armar:
 
-|     Tipo de flor     | \$/atado Cant. | Flores/atado |
-| :------------------: | :------------: | :----------: |
-| Rosas de Tallo largo |       20       |      20      |
-|   Rosas Amarillas    |       20       |      50      |
-|     Rosas Rojas      |       10       |      50      |
-|     Crisantemos      |       5        |     100      |
-|      Margaritas      |       3        |     100      |
+| Bolsas | Precio de Venta $\\$ ($/bolsa) |               Componentes $\\$ (por bolsa)              | Tiempo de Armado $\\$ (hh por bolsa) | Demanda $\\$ (bolsas/sem) |
+| :----: | :----------------------------: | :-----------------------------------------------------: | :----------------------------------: | :-----------------------: |
+|   1    |               10               |  1 kg. Anton $\\$ 2 paquetes William $\\$ 1 kg. surtido |                 0.05                 |            300            |
+|   2    |               20               | 2 kg. Anton $\\$ 1 paquete William $\\$ 1 kg. Cervantes |                 0.10                 |            100            |
+|   3    |               30               | 1 kg. Anton $\\$ 2 paquetes William $\\$ 2 kg. Surtido  |                 0.15                 |            200            |
 
-Los ramos que arma el florista son una creación propia.
-Tiene siete tipos de ramos, y para cada uno definió una composición (en términos de cuántas flores de cada tipo necesita para armar un ramo de cada tipo) y estudió cuál puede ser la **demanda máxima diaria**.
-Eso se muestra en el siguiente cuadro:
+El surtido está integrado por
 
-|   Tipo de ramo    | Demanda máxima (estimada) | Precio de venta (\$/ramo o \$/unidad) | Composición de un ramo de ese tipo      |
-| :---------------: | :-----------------------: | :-----------------------------------: | :-------------------------------------- |
-| Rosas tallo largo |            650            |                   3                   | Por unidad                              |
-|  Rosas amarillas  |            350            |                  10                   | Ramos de 9 rosas                        |
-|    Rosas rojas    |            250            |                   8                   | Ramos de 7 rosas                        |
-|    Crisantemos    |            600            |                   3                   | Ramos de 18 crisantemos                 |
-|   Ramos chicos    |           1100            |                   2                   | 6 crisantemos y 8 margaritas            |
-|  Ramos medianos   |            990            |                   4                   | 10 crisantemos, 10 margaritas y 2 rosas |
-|   Ramos grandes   |            625            |                   6                   | 15 margaritas, 10 crisantemos y 5 rosas |
+- galletas Cervantes y Molière, en el caso de la bolsa 1;
+- y por galletas Anton, William y Cervantes, en el caso de la bolsa 3 (en ambos casos en cualquier proporción)
 
-¿Qué es lo mejor que puede hacer el florista con la información disponible?
+Las galletas William se empaquetan de a medio kg., salvo cuando integran el surtido.
+Para hacer un paquete se demoran **0.2 hh**.
+También pueden comprarse empaquetadas a **\$ 3.5**.
 
-> Análisis previo: comenzar la resolución del ejercicio, realizando un esquema que describa la situación problemática.
+Los paquetes comprados son controlados y estadísticamente el **10%** de los paquetes contienen galletas **partidas**.
+Algunos de dichos paquetes pueden **venderse** como de segunda calidad a **\$ 3.60** y otros pueden **canjearse** a la empresa proveedora a razón de **6 paquetes por cada 10 paquetes rechazados**.
 
-#### Análisis
+| Galletas  | Tiempo Fab. $\\$ (H. maq./kg.) | Costo MP y MO $\\$ ($/kg) | Costo de Venta $\\$ ($/kg.) |
+| :-------: | :----------------------------: | :-----------------------: | :-------------------------: |
+|   Anton   |              0.8               |           1.50            |            0.80             |
+|  William  |              0.7               |           2.00            |            1.00             |
+| Cervantes |              0.5               |           0.80            |            0.60             |
+|  Molière  |              0.4               |           0.90            |            0.50             |
 
-##### Esquema
+La fábrica cuenta con **80** empleados que trabajan **8 hs**. de lunes a viernes.
+De ellos, por lo menos **20** trabajan en el **armado** de bolsas (tarea manual).
+El proceso de empaquetado sólo puede hacerse en **hs. extras**.
+Los operarios pueden hacer **hasta 2 hs. extras por día** que cuestan, en todo concepto **10$/hora**
+También se pueden usar hs. extras para armar bolsas.
+Para que la máquina funcione 1 hora se necesita el trabajo de **3 hombres** (3 hh para una hora máquina).
+Se decidió cargar los gastos semanales de publicidad, que ascenderían a **\$ 5** por bolsa, sólo sobre aquel tipo de bolsa que más se venda.
 
-```mermaid
-flowchart LR
+¿Qué es lo mejor que se puede hacer con la información disponible?
 
-  Atados("5 tipos de atados") ==> Flores("5 tipos de flores") ==> Ramos("7 tipos de ramos")
+#### Análisis de la situación problemática
 
-```
+@import "diagram.svg"
 
-##### Objetivo
+#### Objetivo
 
 - que ? determinar:
-  - las cantidades de ramos de cada tipo a armar
-  - las cantidad de atados de cada tipo a comprar
-- porque ? maximizar la ganancia ( ingresos por venta - costo )
-- cuando ? por dia
+  - cantidad de bolsas de cada tipo a armar
+  - cantidad de galletas de cada tipo a fabricar
+  - cantidad de paquetes de
+- para que ? maximizar la ganncia
+- cuando ? en un periodo de tiempo
 
-##### Hipótesis
+#### Hipótesis y Supuestos
 
-- No hay costos ni contratiempos mas allá de los mencionados
-- El producto y materia prima es arbitrariamente fraccionable **!!**
-  > - Si no (variables discretas)
-  >   - pueden sobrar flores
-- Las rosas en los ramos medianos y grandes son rojas ( son las mas baratas ) **!**
+- No hay costos ni contratiempos mas allá de los mencionados y se poseen todos los recursos necesarios `Certeza`
+  - No hay problemas para cumplir la producción en tiempo
+  - No hay limitaciones en el pedido de rollos de ancho 125 ( se puede pedir cualquier cantidad de rollos de cualquier largo )
+  - La maquina siempre funciona correctamente
+  - etc
+- No habrá cambio en los pedidos ( ni ancho ni largo ), ni nuevos anchos comercializables, ni usos para los desechos `Certeza`
+- El producto es arbitrariamente fraccionable ( pueden ser recortes de cualquier longitud ), no importa cuantos recortes haya de un ancho mientras que la longitud total cumpla la demanda `Proporcionalidad`
+- No afecta de que configuracion de cuchillas sale un corte al largo obtenido `Aditividad`
+- El largo de rollo utilizado en las configuraciones es arbitrariamente fraccionable `Divisibilidad`
 - No hay stock inicial
-- Se vende todo lo producido hasta la demanda maxima
+- "_cantidad total de recortes desechables_" refiere a m2 de desperdicio
+  - se interpreta en lo que se considera la métrica con mas sentido
+  - si se tomase literal, podrían plantearse soluciones triviales, donde se utiliza suficiente largo de solo 2 configuraciones ( donde se hallen los 3 tipos de ancho) y hay solo 2 recortes largos de desperdicio
+- No se puede cortar en forma transversal, el largo y ancho no son intercambiables o no poseemos las herramientas para cortar transversalmente
+  - de modo que no se podría aprovechar un sobrante mas largo que algún ancho para obtener un corte comerciable
+  - en caso contrario podría plantearse una situación trivial sin perdidas
 
-#### Desarrollo
+#### Definición de variables
+
+##### Variables principales
+
+- `configuracion` `{X}A64_{Y}A60_{Z}A35` [m] : longitud de rollo a cortar en cada configuracion de cuchillas
+  - `X` , `Y` , `Z` indican cuantos anchos de cada tipo hay en la configuración
+  - Denotados como [ `R1` ... `RN` ] en el esquema, se opta por un nombre mas descriptivo programaticamente
+    > [ `R1` ... `RN` ] -> [ `1A64_1A60` ... `3A35` ]
+
+##### Auxiliares / Derivadas
+
+- `L64` [m] : longitud de rollo de ancho 64 obtenido
+- `L60` [m] : longitud de rollo de ancho 60 obtenido
+- `L35` [m] : longitud de rollo de ancho 35 obtenido
+- `DES` [m2] : superficie de desperdicio obtenida
+
+##### Constantes
+
+- `Len` [cm] : Largo de rollo obtenible ( = 125cm )
+- `minA64` [m] : longitud minima demandada de rollo de ancho 64 ( = 18km )
+- `minA60` [m] : longitud minima demandada de rollo de ancho 60 ( = 9km )
+- `minA35` [m] : longitud minima demandada de rollo de ancho 35 ( = 9km )
+
+#### Modelo de Programación Lineal Continua
+
+##### Constantes
+
+- `Len` = 125cm
+
+##### Variables
+
+- `{X}A64_{Y}A60_{Z}A35` >= 0 [m] $\forall$ {X,Y,Z} en las configuraciones
+
+##### Producción
+
+- `L64` = $\sum_{Conf \{X,Y,Z\}}$ `{X}A64_{Y}A60_{Z}A35` · `X`
+- `L60` = $\sum_{Conf \{X,Y,Z\}}$ `{X}A64_{Y}A60_{Z}A35` · `Y`
+- `L35` = $\sum_{Conf \{X,Y,Z\}}$ `{X}A64_{Y}A60_{Z}A35` · `Z`
+- `DES` = $\sum_{Conf \{X,Y,Z\}}$ `{X}A64_{Y}A60_{Z}A35` · ( `L` - 64cm `X` -60cm `Y` -35cm `Z` )
+
+##### Demandas mínimas
+
+- _minA64:_ `L64` >= 18000
+- _minA60:_ `L60` >= 9000
+- _minA35:_ `L35` >= 9000
+
+##### Funcional
+
+Z(min) = DES
+
+#### Resolución por software
+
+##### Datos
+
+@import "data.dat" {as="java"}
 
 ##### Modelo
 
@@ -71,14 +163,37 @@ flowchart LR
 
 @import "solution.glps" {as="java"}
 
-##### Notas
+#### Informe de Resultados
 
-- Se comprara todas las flores necesarias para vender TODO ( lo que sea rentable )
-  - Ya que no hay restricciones de compra y la materia prima es fraccionable
-  - **19.160** = `650 * 3 + 350 * 10 + 250 * 8 + 600 * 3 + 1100 * 2 + 990 * 4+ 625 * 6`
-- Se podría haber planteado con matrices / iteraciones, pero la matriz es bastante rala
-  > Investigar matrices / iteraciones glpk
-- Las demandas máximas podrían haberse planteado como Exceso/Defecto
-  - para dar mas libertad al modelo; son máximos estimados, podríamos plantear un retorno reducido
-  - es innecesario ya que si no generan ganancia y producen costos no tiene sentido hacer de mas
-- Probar resolver sin hipótesis **!** y el `2.30`
+La resolución del modelo indica que seria optimo cortar los siguientes largos:
+
+- `18km` de rollo con configuración `{1x64cm, 1x60cm}`
+- `3km` de rollo con configuración `{3x35cm}`
+
+De modo que se obtendrá:
+
+- 18km de rollo ancho 64cm
+- 18 km de rollo ancho 60cm ( el doble del necesario )
+- 9km de rollo ancho 35cm
+- **78000 m2 de desperdicio**
+
+#### Apendices
+
+##### Configuraciones óptimas
+
+Las configuraciones óptimas se obtuvieron a partir del siguiente script:
+
+@import "group.js" {as="javascript", cmd="false"}
+
+<!--
+ #### Redacción y Presentación
+
+ - El documento entregado está organizado prolijamente.
+ - Las secciones están apropiadamente separadas.
+ - La redacción es apropiada y clara.
+ - cuenta con un índice de secciones
+ - La entrega se realiza en fecha.
+ - Las páginas están numeradas. +pdf
+ - Caratula +pdf
+
+-->
