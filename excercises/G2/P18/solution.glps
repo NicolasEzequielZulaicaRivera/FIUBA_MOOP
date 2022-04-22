@@ -1,0 +1,140 @@
+Problem:    model
+Rows:       23
+Columns:    48 (39 integer, 0 binary)
+Non-zeros:  129
+Status:     INTEGER OPTIMAL
+Objective:  z = 5800 (MINimum)
+
+   No.   Row name        Activity     Lower bound   Upper bound
+------ ------------    ------------- ------------- -------------
+     1 dia1_tot                  -27           -27             = 
+     2 dia1_dem[1]               -20           -20             = 
+     3 dia1_dem[2]               -10           -10             = 
+     4 dia1_dem[3]                10            10             = 
+     5 dia2_tot[1]                 0            -0             = 
+     6 dia2_tot[2]                 0            -0             = 
+     7 dia2_tot[3]                 0            -0             = 
+     8 dia2_dem[1]               -50           -50             = 
+     9 dia2_dem[2]               -20           -20             = 
+    10 dia2_dem[3]                -5            -5             = 
+    11 dia3_tot[1,1]
+                                   0            -0             = 
+    12 dia3_tot[1,2]
+                                   0            -0             = 
+    13 dia3_tot[1,3]
+                                   0            -0             = 
+    14 dia3_tot[2,1]
+                                   0            -0             = 
+    15 dia3_tot[2,2]
+                                   0            -0             = 
+    16 dia3_tot[2,3]
+                                   0            -0             = 
+    17 dia3_tot[3,1]
+                                   0            -0             = 
+    18 dia3_tot[3,2]
+                                   0            -0             = 
+    19 dia3_tot[3,3]
+                                   0            -0             = 
+    20 dia3_dem[1]               -20           -20             = 
+    21 dia3_dem[2]               -40           -40             = 
+    22 dia3_dem[3]               -25           -25             = 
+    23 z                        5800                             
+
+   No. Column name       Activity     Lower bound   Upper bound
+------ ------------    ------------- ------------- -------------
+     1 stock[1,1]               15.2             0               
+     2 stock[2,1]                 14             0               
+     3 stock[3,1]               16.9             0               
+     4 stock[1,2]                  0             0               
+     5 stock[2,2]                 16             0               
+     6 stock[3,2]               18.8             0               
+     7 stock[1,3]               10.8             0               
+     8 stock[2,3]                  0             0               
+     9 stock[3,3]                0.1             0               
+    10 dia1_maq[1]  *             16             0               
+    11 dia1_maq[2]  *              8             0               
+    12 dia1_maq[3]  *              3             0               
+    13 dia2_maq[1,1]
+                    *              2             0               
+    14 dia2_maq[1,2]
+                    *              0             0               
+    15 dia2_maq[1,3]
+                    *             14             0               
+    16 dia2_maq[2,1]
+                    *              4             0               
+    17 dia2_maq[2,2]
+                    *              4             0               
+    18 dia2_maq[2,3]
+                    *              0             0               
+    19 dia2_maq[3,1]
+                    *              3             0               
+    20 dia2_maq[3,2]
+                    *              0             0               
+    21 dia2_maq[3,3]
+                    *              0             0               
+    22 dia3_maq[1,1,1]
+                    *              2             0               
+    23 dia3_maq[1,1,2]
+                    *              0             0               
+    24 dia3_maq[1,1,3]
+                    *              0             0               
+    25 dia3_maq[1,2,1]
+                    *              0             0               
+    26 dia3_maq[1,2,2]
+                    *              0             0               
+    27 dia3_maq[1,2,3]
+                    *              0             0               
+    28 dia3_maq[1,3,1]
+                    *              0             0               
+    29 dia3_maq[1,3,2]
+                    *              0             0               
+    30 dia3_maq[1,3,3]
+                    *             14             0               
+    31 dia3_maq[2,1,1]
+                    *              0             0               
+    32 dia3_maq[2,1,2]
+                    *              0             0               
+    33 dia3_maq[2,1,3]
+                    *              4             0               
+    34 dia3_maq[2,2,1]
+                    *              0             0               
+    35 dia3_maq[2,2,2]
+                    *              0             0               
+    36 dia3_maq[2,2,3]
+                    *              4             0               
+    37 dia3_maq[2,3,1]
+                    *              0             0               
+    38 dia3_maq[2,3,2]
+                    *              0             0               
+    39 dia3_maq[2,3,3]
+                    *              0             0               
+    40 dia3_maq[3,1,1]
+                    *              3             0               
+    41 dia3_maq[3,1,2]
+                    *              0             0               
+    42 dia3_maq[3,1,3]
+                    *              0             0               
+    43 dia3_maq[3,2,1]
+                    *              0             0               
+    44 dia3_maq[3,2,2]
+                    *              0             0               
+    45 dia3_maq[3,2,3]
+                    *              0             0               
+    46 dia3_maq[3,3,1]
+                    *              0             0               
+    47 dia3_maq[3,3,2]
+                    *              0             0               
+    48 dia3_maq[3,3,3]
+                    *              0             0               
+
+Integer feasibility conditions:
+
+KKT.PE: max.abs.err = 0.00e+00 on row 0
+        max.rel.err = 0.00e+00 on row 0
+        High quality
+
+KKT.PB: max.abs.err = 7.11e-15 on row 8
+        max.rel.err = 3.38e-16 on row 9
+        High quality
+
+End of output

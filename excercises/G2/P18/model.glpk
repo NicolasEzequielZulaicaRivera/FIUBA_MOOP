@@ -1,0 +1,77 @@
+set dias;
+set productos;
+
+param maq_tot;
+param demanda{i in productos, j in dias};
+param rendimiento{i in productos, j in dias}; # dias seguidos
+
+var stock{i in productos, j in dias} >= 0;
+
+# Dia 1
+
+param stock_inicial{i in productos};
+
+var dia1_maq{ i in productos } integer >= 0;
+
+s.t. dia1_tot: maq_tot = sum{ i in productos } dia1_maq[i];
+
+s.t. dia1_dem{ i in productos }: demanda[i,1] + stock[i,1] = stock_inicial[i] + dia1_maq[i] * rendimiento[i,1];
+
+# Dia 2
+
+var dia2_maq{ i in productos, j in productos } integer >= 0; # From i To j
+
+s.t. dia2_tot{i in productos}: dia1_maq[i] = sum{ j in dias } dia2_maq[i, j];
+
+s.t. dia2_dem{ i in productos }: demanda[i,2] + stock[i,2] = stock[i,1]
+  + ( sum{ j in productos } dia2_maq[i, j] * rendimiento[i,1] )
+  # Maquinas repetidas 1 dia
+  - dia2_maq[i, i] * rendimiento[i,1] # 
+  + dia2_maq[i, i] * rendimiento[i,2];
+
+# Dia 3
+
+var dia3_maq{ i in productos, j in productos, k in productos } integer >= 0; # From i To j To k
+
+s.t. dia3_tot{i in productos, j in productos}: dia2_maq[i, j] = sum{ k in dias } dia3_maq[i, j, k];
+
+s.t. dia3_dem{ i in productos }: demanda[i,3] + stock[i,3] = stock[i,2]
+  + ( sum{ j in productos } sum{ k in productos } dia3_maq[i, j, k] * rendimiento[i,1] )
+  + ( sum{ j in productos } (
+    # Maquinas repetidas 1 dia
+    - ( dia3_maq[i, j, j] * rendimiento[i,1] )
+    + ( dia3_maq[i, j, j] * rendimiento[i,2] )
+    # Maquinas repetidas 2 dias
+    - ( dia3_maq[i, i, i] * rendimiento[i,2] )
+    + ( dia3_maq[i, i, i] * rendimiento[i,3] )
+  ) );
+
+minimize z: 200 * (
+  # Maquinas no repetidas dia 2. i != j
+  ( sum{ i in productos } ((sum{ j in productos } dia2_maq[i, j]) - dia2_maq[i, i]) )
+  # Maquinas no repetidas dia 3. j != k
+  + ( sum{ i in productos } (
+    ( sum{ j in productos } ((sum{ k in productos } dia3_maq[i, j, k]) - dia3_maq[i, j, j]) )
+  ) )
+);
+
+data;
+set dias := 1 2 3;
+set productos := 1 2 3;
+
+param maq_tot := 27;
+param demanda: 1 2 3 :=
+  1 40 50 20
+  2 10 20 40
+  3  5  5 25;
+param rendimiento: 1 2 3 :=
+  1 2.2 2.0 1.8
+  2 3.0 2.5 2.0
+  3 2.3 2.1 1.7;
+
+param stock_inicial :=
+  1 20
+  2 0 
+  3 15;
+
+end;
