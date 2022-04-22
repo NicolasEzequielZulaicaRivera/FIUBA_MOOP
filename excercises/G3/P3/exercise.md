@@ -41,12 +41,32 @@ Y1 + Y2 = 1
 
 ##### f- que E1 tome únicamente alguno de los siguientes valores: 1, 2, 3, 5, 6, 7.
 
+E1 <= 7
+
+E1 <= (4-m) IF
+
+E1 >= (4+m) (1-IF)
+
 ##### g- que C1 sea mayor que 10.
+
+C1 >= 10 + m
 
 ##### h- que E1 tome únicamente valores impares.
 
+int F1 = ( E1 + 1 ) / 2
+
 ##### i- que E1 tome únicamente alguno de los siguientes valores: 4, 9, 16.
+
+i - M (1-is{i}) <= E1 <= i + M (1-is{i}) , for each i in [4,9,16]
+
+1 = sum(is{i}) , for each i in [4,9,16]
 
 ##### j- que C1 sea mayor o igual a 50 si Y1=1 ó a 75 si Y1=0.
 
+C1 >= 50 + 25 (1-Y1)
+
 ##### k- que E1 sea mayor a 100 o sino menor que 80
+
+E1 >= 100 - M isSmall
+
+E1 <= 80 + M (1-isSmall)
