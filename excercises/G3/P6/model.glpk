@@ -1,77 +1,112 @@
-set dias;
-set productos;
+param m;
+param M;
+param precioProd;
+set aceites;
+set lineas;
 
-param maq_tot;
-param demanda{i in productos, j in dias};
-param rendimiento{i in productos, j in dias}; # dias seguidos
+param capacidadLinea{i in lineas};
+param consumoLinea{i in lineas, a in aceites};
 
-var stock{i in productos, j in dias} >= 0;
+param durezaMax;
+param durezaMin;
+param dureza{ a in aceites};
+param costo{ a in aceites};
 
-# Dia 1
+param maxAceites;
+param minAceite;
 
-param stock_inicial{i in productos};
+set mant_ranges;
+param mant_mins { r in mant_ranges };
+param mant_maxs { r in mant_ranges };
+param mant_price { r in mant_ranges };
 
-var dia1_maq{ i in productos } integer >= 0;
+# refinamiento de aceite
 
-s.t. dia1_tot: maq_tot = sum{ i in productos } dia1_maq[i];
+var aceiteRefinado{a in aceites} >= 0;
 
-s.t. dia1_dem{ i in productos }: demanda[i,1] + stock[i,1] = stock_inicial[i] + dia1_maq[i] * rendimiento[i,1];
+s.t. refinamiento_linea_{i in lineas}: capacidadLinea[i] >= sum{a in aceites} consumoLinea[i, a] * aceiteRefinado[a];
 
-# Dia 2
+# indicadores
 
-var dia2_maq{ i in productos, j in productos } integer >= 0; # From i To j
+var seUsaAceite{a in aceites} binary >= 0;
 
-s.t. dia2_tot{i in productos}: dia1_maq[i] = sum{ j in dias } dia2_maq[i, j];
+s.t. max_seUsaAceite{a in aceites}: aceiteRefinado[a] <= seUsaAceite[a] * M;
+s.t. min_seUsaAceite{a in aceites}: seUsaAceite[a] * m <= aceiteRefinado[a];
 
-s.t. dia2_dem{ i in productos }: demanda[i,2] + stock[i,2] = stock[i,1]
-  + ( sum{ j in productos } dia2_maq[i, j] * rendimiento[i,1] )
-  # Maquinas repetidas 1 dia
-  - dia2_maq[i, i] * rendimiento[i,1] # 
-  + dia2_maq[i, i] * rendimiento[i,2];
+# restricciones tecnológicas
 
-# Dia 3
+s.t. _maxAceites: sum{a in aceites} seUsaAceite[a] <= maxAceites;
 
-var dia3_maq{ i in productos, j in productos, k in productos } integer >= 0; # From i To j To k
+s.t. _minAceite{a in aceites}: aceiteRefinado[a] >= minAceite * seUsaAceite[a];
 
-s.t. dia3_tot{i in productos, j in productos}: dia2_maq[i, j] = sum{ k in dias } dia3_maq[i, j, k];
+s.t. AorBthenC: m * (seUsaAceite['A'] + seUsaAceite['B'] ) >= seUsaAceite['C'];
 
-s.t. dia3_dem{ i in productos }: demanda[i,3] + stock[i,3] = stock[i,2]
-  + ( sum{ j in productos } sum{ k in productos } dia3_maq[i, j, k] * rendimiento[i,1] )
-  + ( sum{ j in productos } (
-    # Maquinas repetidas 1 dia
-    - ( dia3_maq[i, j, j] * rendimiento[i,1] )
-    + ( dia3_maq[i, j, j] * rendimiento[i,2] )
-    # Maquinas repetidas 2 dias
-    - ( dia3_maq[i, i, i] * rendimiento[i,2] )
-    + ( dia3_maq[i, i, i] * rendimiento[i,3] )
-  ) );
+# dureza
 
-minimize z: 200 * (
-  # Maquinas no repetidas dia 2. i != j
-  ( sum{ i in productos } ((sum{ j in productos } dia2_maq[i, j]) - dia2_maq[i, i]) )
-  # Maquinas no repetidas dia 3. j != k
-  + ( sum{ i in productos } (
-    ( sum{ j in productos } ((sum{ k in productos } dia3_maq[i, j, k]) - dia3_maq[i, j, j]) )
-  ) )
-);
+s.t. minDur: durezaMin * sum{a in aceites} aceiteRefinado[a]<= sum{a in aceites} aceiteRefinado[a] * dureza[a];
+s.t. maxDur: durezaMax * sum{a in aceites} aceiteRefinado[a] >= sum{a in aceites} aceiteRefinado[a] * dureza[a];
+
+# mantenimento
+
+var costoMant >=0;
+
+var useTime >= 0; # hs
+s.t. _useTime: useTime = sum{ a in aceites } aceiteRefinado[a] / 60;
+
+var isInRange{ r in mant_ranges} binary >= 0;
+
+## isInRange1;   0 - M (1 - range1) <= total <= 100 + M (1 - range1)
+## isInRange2; 100 - M (1 - range2) <= total <= 200 + M (1 - range2)
+## isInRange3; 200 - M (1 - range3) <= total <= 500 + M (1 - range3)
+## isInRange4; 500 - M (1 - range4) <= total <=   M + M (1 - range4)
+s.t. min_isInRange{ r in mant_ranges}: mant_mins[r] - M * ( 1-isInRange[r] ) <= useTime;
+s.t. max_isInRange{ r in mant_ranges}: useTime <= mant_maxs[r] + M * ( 1-isInRange[r] );
+
+s.t. _isInRange: 1 = sum{ r in mant_ranges } isInRange[r];
+
+var mant_cost >= 0;
+s.t. _mant_cost: mant_cost = sum{ r in mant_ranges } isInRange[r] * mant_price[r];
+
+# funcional
+
+var gain >= 0;
+s.t. _gain: gain =  precioProd * sum{ a in aceites } aceiteRefinado[a];
+
+maximize z: gain - mant_cost;
 
 data;
-set dias := 1 2 3;
-set productos := 1 2 3;
+param m := 0.1;
+param M := 1000;
+param precioProd := 150;
+set aceites := A B C D E;
+set lineas := 1 2;
 
-param maq_tot := 27;
-param demanda: 1 2 3 :=
-  1 40 50 20
-  2 10 20 40
-  3  5  5 25;
-param rendimiento: 1 2 3 :=
-  1 2.2 2.0 1.8
-  2 3.0 2.5 2.0
-  3 2.3 2.1 1.7;
+param capacidadLinea :=  1 200 2 250;
+param consumoLinea : A B C D E :=
+  1 1 1 0 0 0
+  2 0 0 1 1 1;
 
-param stock_inicial :=
-  1 20
-  2 0 
-  3 15;
+param durezaMax := 6;
+param durezaMin := 3;
+param dureza :=
+  A 8.8
+  B 6.1
+  C 2.0
+  D 4.2
+  E 5.0;
+param costo :=
+  A 110
+  B 120
+  C 130
+  D 110
+  E 115;
+
+param maxAceites := 3;
+param minAceite := 20;
+
+set mant_ranges := 1 2 3 4;
+param mant_mins := 1 0 2 100 3 200 4 500;
+param mant_maxs := 1 100 2 200 3 500 4 1000;
+param mant_price := 1 5000 2 8000 3 9500 4 10000;
 
 end;
