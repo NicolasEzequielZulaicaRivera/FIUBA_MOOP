@@ -7,11 +7,11 @@ param costo{j in recursos};
 param precioReventa{j in recursos};
 param precio{i in productos};
 
-param cajaInicial := 30000;
-param minCajaFinal := 45000;
-param maxPrestamo := 20000;
-param interesSobrante := 0.005;
-param interesPrestamo := 0.01;
+param cajaInicial;
+param minCajaFinal;
+param maxPrestamo;
+param interesSobrante;
+param interesPrestamo;
 
 # Recursos
 
@@ -46,35 +46,5 @@ s.t. _minCajaFinal: minCajaFinal <= cajaInicial + gain - cost
 # Funcional
 
 maximize z: gain - cost - interesPrestamo * prestamo + interesSobrante * sobrante;
-
-data;
-
-set recursos := HH HM MP;
-set productos E K S;
-
-param consumo: HH HM MP :=
-  E 3 3 3
-  K 4 5 6
-  S 7 8 9;
-
-param disponibilidad :=
-  HH 2500
-  HM 1000
-  MP 5000;
-
-param costo :=
-  HH 5
-  HM 7
-  MP 2;
-
-param precioReventa :=
-  HH 4
-  HM 8
-  MP 2;
-
-param precio :=
-  E 100
-  K 150
-  S 200;
 
 end;

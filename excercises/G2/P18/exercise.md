@@ -25,26 +25,32 @@ Rendimiento de cada día:
 
 El costo de ajustar una máquina es de $ 200.
 No se puede posponer ni adelantar la entrega de un producto,
-el incumplimiento genera un costo de **30, 40 y 50 $/unidad** según se trate del articulo 1, 2 ó 3 respectivamente.
+el incumplimiento genera un costo de **30, 40 y 50 \$/unidad** según se trate del articulo 1, 2 ó 3 respectivamente.
 
 > Análisis previo: comenzar la resolución del ejercicio, realizando un esquema que describa la situación problemática.
 
 #### Análisis de la situación problemática
 
+Problema de rotación de tareas
+
 @import "diagram.svg"
 
 #### Objetivo
 
-- que ? determinar:
-  - las cantidades de ramos de cada tipo a armar
-  - las cantidad de atados de cada tipo a comprar
-- porque ? maximizar la ganancia ( ingresos por venta - costo )
-- cuando ? por dia
+- que ? determinar cuantas maquinas maquinas realizan cada trabajo cada dia y como rotan
+- porque ? minimizar el costo
+- cuando ? en un mes
 
 #### Hipótesis y Supuestos
 
 - No hay costos ni contratiempos mas allá de los mencionados
 - El producto y materia prima es arbitrariamente fraccionable
+- Se guardan los sobrantes
+- Los artículos hechos con distintos rendimientos son indistinguibles
+- El primer dia las maquinas ya están ajustadas
+- Las maquinas no cambian de articulo ni se detienen a lo largo del dia
+- Las maquinas no pueden no hacer nada **!!** simplifica mucho el modelo, es menos flexible al cambio
+- El costo de incumplimiento es igual cada dia
 
 #### Definición de variables
 

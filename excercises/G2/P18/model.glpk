@@ -6,6 +6,9 @@ param demanda{i in productos, j in dias};
 param rendimiento{i in productos, j in dias}; # dias seguidos
 
 var stock{i in productos, j in dias} >= 0;
+var defecto{i in productos, j in dias} >= 0;
+
+param costoDefecto{i in productos};
 
 # Dia 1
 
@@ -15,7 +18,7 @@ var dia1_maq{ i in productos } integer >= 0;
 
 s.t. dia1_tot: maq_tot = sum{ i in productos } dia1_maq[i];
 
-s.t. dia1_dem{ i in productos }: demanda[i,1] + stock[i,1] = stock_inicial[i] + dia1_maq[i] * rendimiento[i,1];
+s.t. dia1_dem{ i in productos }: demanda[i,1] + stock[i,1] - defecto[i,1] = stock_inicial[i] + dia1_maq[i] * rendimiento[i,1];
 
 # Dia 2
 
@@ -23,7 +26,7 @@ var dia2_maq{ i in productos, j in productos } integer >= 0; # From i To j
 
 s.t. dia2_tot{i in productos}: dia1_maq[i] = sum{ j in dias } dia2_maq[i, j];
 
-s.t. dia2_dem{ i in productos }: demanda[i,2] + stock[i,2] = stock[i,1]
+s.t. dia2_dem{ i in productos }: demanda[i,2] + stock[i,2] - defecto[i,2] = stock[i,1]
   + ( sum{ j in productos } dia2_maq[i, j] * rendimiento[i,1] )
   # Maquinas repetidas 1 dia
   - dia2_maq[i, i] * rendimiento[i,1] # 
@@ -35,7 +38,7 @@ var dia3_maq{ i in productos, j in productos, k in productos } integer >= 0; # F
 
 s.t. dia3_tot{i in productos, j in productos}: dia2_maq[i, j] = sum{ k in dias } dia3_maq[i, j, k];
 
-s.t. dia3_dem{ i in productos }: demanda[i,3] + stock[i,3] = stock[i,2]
+s.t. dia3_dem{ i in productos }: demanda[i,3] + stock[i,3] - defecto[i,3] = stock[i,2]
   + ( sum{ j in productos } sum{ k in productos } dia3_maq[i, j, k] * rendimiento[i,1] )
   + ( sum{ j in productos } (
     # Maquinas repetidas 1 dia
@@ -53,7 +56,7 @@ minimize z: 200 * (
   + ( sum{ i in productos } (
     ( sum{ j in productos } ((sum{ k in productos } dia3_maq[i, j, k]) - dia3_maq[i, j, j]) )
   ) )
-);
+) + sum{ i in productos } sum{ j in dias} defecto[i,j] * costoDefecto[i];
 
 data;
 set dias := 1 2 3;
@@ -73,5 +76,10 @@ param stock_inicial :=
   1 20
   2 0 
   3 15;
+
+param costoDefecto :=
+  1 30
+  2 40
+  3 50;
 
 end;
