@@ -1,0 +1,25 @@
+set tipoTorta := A B C;
+set ingrediente := harina azucar chocolate huevo dulceFrutilla crema ddl;
+set ingrediente_cobertura := chocolate crema ddl;
+
+param consumo : harina azucar chocolate huevo dulceFrutilla crema ddl :=
+  A 1.0 0.5 0.5 6 0.2 0 0
+  B 1.5 0.6 0.5 6 0.0 0 0
+  C 0.8 0.4 0.0 4 0.4 0 0;
+
+param disponibilidad :=
+  harina 500
+  azucar 200
+  chocolate 120
+  huevo 1800
+  dulceFrutilla 40
+  crema 13
+  ddl 15;
+
+param cajas := 300;
+
+param consumoCobertura :=
+  A 0.2 B 0.25 C 0;
+
+param precio :=
+  A 20 B 25 C 12;

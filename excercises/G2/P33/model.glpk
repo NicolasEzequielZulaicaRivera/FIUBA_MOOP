@@ -1,0 +1,36 @@
+set tipoTorta;
+set ingrediente;
+set ingrediente_cobertura;
+
+param consumo{ t in tipoTorta, i in ingrediente };
+
+param disponibilidad{ i in ingrediente };
+
+param cajas;
+
+param consumoCobertura{ i in tipoTorta };
+
+param precio{ i in tipoTorta };
+
+# Definición de Variables
+
+var tortas{ t in tipoTorta } >= 0; # cantidad de cada torta de cada tipo producido
+var cobertura >= 0; # kg de cobertura producidos
+var cobertura_{ i in ingrediente_cobertura} >= 0; # kg de cada ingrediente utilizado en la cobertura
+
+# Mezcla
+
+s.t. mezcla: cobertura = sum{ i in ingrediente_cobertura} cobertura_[i];
+s.t. ddl_mezcla: 0.2 * cobertura = cobertura_["chocolate"];
+s.t. min_crema_mezcla: 0.4 * cobertura <= cobertura_["crema"];
+s.t. max_crema_mezcla: 0.6 * cobertura >= cobertura_["crema"];
+
+# Armado
+
+s.t. _consumo{ i in ingrediente }: disponibilidad[i] >= sum{ t in tipoTorta } consumo[t,i] * tortas[t];
+s.t. _consumoReal{ i in ingrediente_cobertura }: disponibilidad[i] >= cobertura_[i] + sum{ t in tipoTorta } consumo[t,i] * tortas[t];
+s.t. _consumoCobertura: cobertura >= sum{ t in tipoTorta } consumoCobertura[t] * tortas[t];
+s.t. _consumoCajas: cajas >= sum{ t in tipoTorta } tortas[t];
+# Funcional
+
+maximize z: sum{ t in tipoTorta } precio[t] * tortas[t];
