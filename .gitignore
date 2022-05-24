@@ -1,4 +1,7 @@
 *.pdf
 *.gdoc
+*.gsheet
+*.gslides
+*.gdraw
 Icon?
 desktop.ini
