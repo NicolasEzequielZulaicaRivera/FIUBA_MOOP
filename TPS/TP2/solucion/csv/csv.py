@@ -8,7 +8,7 @@ def writeTo( output, filename ):
     with open( filename, "w" ) as f:
         f.write( output )
 
-datos = "avanzado" # "basico" o "avanzado"
+datos = "basico" # "basico" o "avanzado"
 outp = GLPKOutput("tp2_"+datos+".sol")
 
 setupTOC(outp)

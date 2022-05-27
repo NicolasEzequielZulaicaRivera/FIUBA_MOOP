@@ -11,7 +11,7 @@ def setupTOC(outp):
         if not name.startswith('oferta_origenes'):
             continue
         origin = name[16:-1]
-        supply[origin] = makeFloat(row[3])
+        supply[origin] = makeFloat(row[5])
 
     for row in outp.Cols:
         # col = [ id, name, st, activity, lower_bound, upper_bound, marginal ]

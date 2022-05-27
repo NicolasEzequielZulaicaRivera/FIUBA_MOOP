@@ -1,7 +1,7 @@
 Problem:    tp2
 Rows:       265
-Columns:    558
-Non-zeros:  2368
+Columns:    540
+Non-zeros:  2350
 Status:     OPTIMAL
 Objective:  z = 7870.208219 (MAXimum)
 
@@ -28,9 +28,9 @@ Objective:  z = 7870.208219 (MAXimum)
     10 capacidad_centro[PANAMA,AIRE]
                     B              0                        1800 
     11 capacidad_centro[PANAMA,TIERRA]
-                    B              0                        1100 
+                    B             90                        1100 
     12 capacidad_centro[PANAMA,MAR]
-                    B            155                        1900 
+                    B             65                        1900 
     13 capacidad_centro[NUEVA_YORK,AIRE]
                     B              0                        1800 
     14 capacidad_centro[NUEVA_YORK,TIERRA]
@@ -726,7 +726,7 @@ Objective:  z = 7870.208219 (MAXimum)
     93 toc[COLOMBIA,PANAMA,TIERRA]
                     B              0             0               
     94 toc[PANAMA,PANAMA,TIERRA]
-                    NL             0             0                       < eps
+                    B             90             0               
     95 toc[REPUBLICA_DOMINICANA,PANAMA,TIERRA]
                     B              0             0               
     96 toc[MEXICO,PANAMA,TIERRA]
@@ -770,7 +770,7 @@ Objective:  z = 7870.208219 (MAXimum)
    115 toc[COLOMBIA,PANAMA,MAR]
                     B             65             0               
    116 toc[PANAMA,PANAMA,MAR]
-                    B             90             0               
+                    NL             0             0                       < eps
    117 toc[REPUBLICA_DOMINICANA,PANAMA,MAR]
                     NL             0             0                  -0.0589041 
    118 toc[MEXICO,PANAMA,MAR]
@@ -1331,347 +1331,311 @@ Objective:  z = 7870.208219 (MAXimum)
                     NL             0             0                   -0.376712 
    396 toc[NUEVA_ZELANDA,TOKIO,MAR]
                     NL             0             0                   -0.645205 
-   397 tcc[SAN_PABLO,SAN_PABLO,AIRE]
-                    NL             0             0                       < eps
-   398 tcc[PANAMA,SAN_PABLO,AIRE]
+   397 tcc[PANAMA,SAN_PABLO,AIRE]
                     NL             0             0                   -0.984932 
-   399 tcc[NUEVA_YORK,SAN_PABLO,AIRE]
+   398 tcc[NUEVA_YORK,SAN_PABLO,AIRE]
                     NL             0             0                   -0.973973 
-   400 tcc[AMSTERDAM,SAN_PABLO,AIRE]
+   399 tcc[AMSTERDAM,SAN_PABLO,AIRE]
                     NL             0             0                        -1.4 
-   401 tcc[ESTAMBUL,SAN_PABLO,AIRE]
+   400 tcc[ESTAMBUL,SAN_PABLO,AIRE]
                     NL             0             0                    -1.33151 
-   402 tcc[TOKIO,SAN_PABLO,AIRE]
+   401 tcc[TOKIO,SAN_PABLO,AIRE]
                     NL             0             0                     -1.2137 
-   403 tcc[SAN_PABLO,SAN_PABLO,TIERRA]
-                    NL             0             0                       < eps
-   404 tcc[PANAMA,SAN_PABLO,TIERRA]
+   402 tcc[PANAMA,SAN_PABLO,TIERRA]
                     B              0             0               
-   405 tcc[NUEVA_YORK,SAN_PABLO,TIERRA]
+   403 tcc[NUEVA_YORK,SAN_PABLO,TIERRA]
                     B              0             0               
-   406 tcc[AMSTERDAM,SAN_PABLO,TIERRA]
+   404 tcc[AMSTERDAM,SAN_PABLO,TIERRA]
                     B              0             0               
-   407 tcc[ESTAMBUL,SAN_PABLO,TIERRA]
+   405 tcc[ESTAMBUL,SAN_PABLO,TIERRA]
                     B              0             0               
-   408 tcc[TOKIO,SAN_PABLO,TIERRA]
+   406 tcc[TOKIO,SAN_PABLO,TIERRA]
                     B              0             0               
-   409 tcc[SAN_PABLO,SAN_PABLO,MAR]
-                    NL             0             0                       < eps
-   410 tcc[PANAMA,SAN_PABLO,MAR]
+   407 tcc[PANAMA,SAN_PABLO,MAR]
                     NL             0             0                   -0.573973 
-   411 tcc[NUEVA_YORK,SAN_PABLO,MAR]
+   408 tcc[NUEVA_YORK,SAN_PABLO,MAR]
                     NL             0             0                   -0.782192 
-   412 tcc[AMSTERDAM,SAN_PABLO,MAR]
+   409 tcc[AMSTERDAM,SAN_PABLO,MAR]
                     NL             0             0                    -1.10959 
-   413 tcc[ESTAMBUL,SAN_PABLO,MAR]
+   410 tcc[ESTAMBUL,SAN_PABLO,MAR]
                     NL             0             0                    -1.14521 
-   414 tcc[TOKIO,SAN_PABLO,MAR]
+   411 tcc[TOKIO,SAN_PABLO,MAR]
                     NL             0             0                   -0.689041 
-   415 tcc[SAN_PABLO,PANAMA,AIRE]
+   412 tcc[SAN_PABLO,PANAMA,AIRE]
                     NL             0             0                   -0.413699 
-   416 tcc[SAN_PABLO,NUEVA_YORK,AIRE]
+   413 tcc[SAN_PABLO,NUEVA_YORK,AIRE]
                     NL             0             0                   -0.535616 
-   417 tcc[SAN_PABLO,AMSTERDAM,AIRE]
+   414 tcc[SAN_PABLO,AMSTERDAM,AIRE]
                     NL             0             0                   -0.461644 
-   418 tcc[SAN_PABLO,ESTAMBUL,AIRE]
+   415 tcc[SAN_PABLO,ESTAMBUL,AIRE]
                     NL             0             0                   -0.217808 
-   419 tcc[SAN_PABLO,TOKIO,AIRE]
+   416 tcc[SAN_PABLO,TOKIO,AIRE]
                     NL             0             0                   -0.816438 
-   420 tcc[SAN_PABLO,PANAMA,TIERRA]
+   417 tcc[SAN_PABLO,PANAMA,TIERRA]
                     B              0             0               
-   421 tcc[SAN_PABLO,NUEVA_YORK,TIERRA]
+   418 tcc[SAN_PABLO,NUEVA_YORK,TIERRA]
                     B              0             0               
-   422 tcc[SAN_PABLO,AMSTERDAM,TIERRA]
+   419 tcc[SAN_PABLO,AMSTERDAM,TIERRA]
                     B              0             0               
-   423 tcc[SAN_PABLO,ESTAMBUL,TIERRA]
+   420 tcc[SAN_PABLO,ESTAMBUL,TIERRA]
                     B              0             0               
-   424 tcc[SAN_PABLO,TOKIO,TIERRA]
+   421 tcc[SAN_PABLO,TOKIO,TIERRA]
                     NL             0             0                    -6.50959 
-   425 tcc[SAN_PABLO,PANAMA,MAR]
+   422 tcc[SAN_PABLO,PANAMA,MAR]
                     NL             0             0                   -0.039726 
-   426 tcc[SAN_PABLO,NUEVA_YORK,MAR]
+   423 tcc[SAN_PABLO,NUEVA_YORK,MAR]
                     NL             0             0                  -0.0863014 
-   427 tcc[SAN_PABLO,AMSTERDAM,MAR]
+   424 tcc[SAN_PABLO,AMSTERDAM,MAR]
                     NL             0             0                  -0.0767123 
-   428 tcc[SAN_PABLO,ESTAMBUL,MAR]
+   425 tcc[SAN_PABLO,ESTAMBUL,MAR]
                     B              0             0               
-   429 tcc[SAN_PABLO,TOKIO,MAR]
+   426 tcc[SAN_PABLO,TOKIO,MAR]
                     NL             0             0                   -0.110959 
-   430 tcc[PANAMA,PANAMA,AIRE]
-                    NL             0             0                       < eps
-   431 tcc[NUEVA_YORK,PANAMA,AIRE]
+   427 tcc[NUEVA_YORK,PANAMA,AIRE]
                     NL             0             0                   -0.243836 
-   432 tcc[AMSTERDAM,PANAMA,AIRE]
+   428 tcc[AMSTERDAM,PANAMA,AIRE]
                     NL             0             0                    -1.08767 
-   433 tcc[ESTAMBUL,PANAMA,AIRE]
+   429 tcc[ESTAMBUL,PANAMA,AIRE]
                     NL             0             0                    -1.06986 
-   434 tcc[TOKIO,PANAMA,AIRE]
+   430 tcc[TOKIO,PANAMA,AIRE]
                     NL             0             0                   -0.838356 
-   435 tcc[PANAMA,PANAMA,TIERRA]
-                    NL             0             0                       < eps
-   436 tcc[NUEVA_YORK,PANAMA,TIERRA]
+   431 tcc[NUEVA_YORK,PANAMA,TIERRA]
                     B              0             0               
-   437 tcc[AMSTERDAM,PANAMA,TIERRA]
+   432 tcc[AMSTERDAM,PANAMA,TIERRA]
                     B              0             0               
-   438 tcc[ESTAMBUL,PANAMA,TIERRA]
+   433 tcc[ESTAMBUL,PANAMA,TIERRA]
                     B              0             0               
-   439 tcc[TOKIO,PANAMA,TIERRA]
+   434 tcc[TOKIO,PANAMA,TIERRA]
                     B              0             0               
-   440 tcc[PANAMA,PANAMA,MAR]
-                    NL             0             0                       < eps
-   441 tcc[NUEVA_YORK,PANAMA,MAR]
+   435 tcc[NUEVA_YORK,PANAMA,MAR]
                     NL             0             0                   -0.132877 
-   442 tcc[AMSTERDAM,PANAMA,MAR]
+   436 tcc[AMSTERDAM,PANAMA,MAR]
                     NL             0             0                   -0.932877 
-   443 tcc[ESTAMBUL,PANAMA,MAR]
+   437 tcc[ESTAMBUL,PANAMA,MAR]
                     NL             0             0                   -0.694521 
-   444 tcc[TOKIO,PANAMA,MAR]
+   438 tcc[TOKIO,PANAMA,MAR]
                     NL             0             0                   -0.257534 
-   445 tcc[PANAMA,NUEVA_YORK,AIRE]
+   439 tcc[PANAMA,NUEVA_YORK,AIRE]
                     NL             0             0                   -0.171233 
-   446 tcc[PANAMA,AMSTERDAM,AIRE]
+   440 tcc[PANAMA,AMSTERDAM,AIRE]
                     NL             0             0                   -0.243836 
-   447 tcc[PANAMA,ESTAMBUL,AIRE]
+   441 tcc[PANAMA,ESTAMBUL,AIRE]
                     NL             0             0                   -0.330137 
-   448 tcc[PANAMA,TOKIO,AIRE]
+   442 tcc[PANAMA,TOKIO,AIRE]
                     NL             0             0                   -0.967123 
-   449 tcc[PANAMA,NUEVA_YORK,TIERRA]
+   443 tcc[PANAMA,NUEVA_YORK,TIERRA]
                     NL             0             0                   -0.284932 
-   450 tcc[PANAMA,AMSTERDAM,TIERRA]
+   444 tcc[PANAMA,AMSTERDAM,TIERRA]
                     B              0             0               
-   451 tcc[PANAMA,ESTAMBUL,TIERRA]
+   445 tcc[PANAMA,ESTAMBUL,TIERRA]
                     B              0             0               
-   452 tcc[PANAMA,TOKIO,TIERRA]
+   446 tcc[PANAMA,TOKIO,TIERRA]
                     NL             0             0                    -6.89041 
-   453 tcc[PANAMA,NUEVA_YORK,MAR]
+   447 tcc[PANAMA,NUEVA_YORK,MAR]
                     NL             0             0                  -0.0575342 
-   454 tcc[PANAMA,AMSTERDAM,MAR]
+   448 tcc[PANAMA,AMSTERDAM,MAR]
                     NL             0             0                    -0.19726 
-   455 tcc[PANAMA,ESTAMBUL,MAR]
+   449 tcc[PANAMA,ESTAMBUL,MAR]
                     NL             0             0                   -0.252055 
-   456 tcc[PANAMA,TOKIO,MAR]
+   450 tcc[PANAMA,TOKIO,MAR]
                     NL             0             0                   -0.578082 
-   457 tcc[NUEVA_YORK,NUEVA_YORK,AIRE]
-                    NL             0             0                       < eps
-   458 tcc[AMSTERDAM,NUEVA_YORK,AIRE]
+   451 tcc[AMSTERDAM,NUEVA_YORK,AIRE]
                     NL             0             0                    -1.15479 
-   459 tcc[ESTAMBUL,NUEVA_YORK,AIRE]
+   452 tcc[ESTAMBUL,NUEVA_YORK,AIRE]
                     NL             0             0                   -0.849315 
-   460 tcc[TOKIO,NUEVA_YORK,AIRE]
+   453 tcc[TOKIO,NUEVA_YORK,AIRE]
                     NL             0             0                    -1.71233 
-   461 tcc[NUEVA_YORK,NUEVA_YORK,TIERRA]
-                    NL             0             0                       < eps
-   462 tcc[AMSTERDAM,NUEVA_YORK,TIERRA]
+   454 tcc[AMSTERDAM,NUEVA_YORK,TIERRA]
                     B              0             0               
-   463 tcc[ESTAMBUL,NUEVA_YORK,TIERRA]
+   455 tcc[ESTAMBUL,NUEVA_YORK,TIERRA]
                     B              0             0               
-   464 tcc[TOKIO,NUEVA_YORK,TIERRA]
+   456 tcc[TOKIO,NUEVA_YORK,TIERRA]
                     B              0             0               
-   465 tcc[NUEVA_YORK,NUEVA_YORK,MAR]
-                    NL             0             0                       < eps
-   466 tcc[AMSTERDAM,NUEVA_YORK,MAR]
+   457 tcc[AMSTERDAM,NUEVA_YORK,MAR]
                     NL             0             0                    -0.70411 
-   467 tcc[ESTAMBUL,NUEVA_YORK,MAR]
+   458 tcc[ESTAMBUL,NUEVA_YORK,MAR]
                     NL             0             0                   -0.569863 
-   468 tcc[TOKIO,NUEVA_YORK,MAR]
+   459 tcc[TOKIO,NUEVA_YORK,MAR]
                     NL             0             0                   -0.950685 
-   469 tcc[NUEVA_YORK,AMSTERDAM,AIRE]
+   460 tcc[NUEVA_YORK,AMSTERDAM,AIRE]
                     NL             0             0                  -0.0958904 
-   470 tcc[NUEVA_YORK,ESTAMBUL,AIRE]
+   461 tcc[NUEVA_YORK,ESTAMBUL,AIRE]
                     NL             0             0                   -0.238356 
-   471 tcc[NUEVA_YORK,TOKIO,AIRE]
+   462 tcc[NUEVA_YORK,TOKIO,AIRE]
                     NL             0             0                   -0.883562 
-   472 tcc[NUEVA_YORK,AMSTERDAM,TIERRA]
+   463 tcc[NUEVA_YORK,AMSTERDAM,TIERRA]
                     B              0             0               
-   473 tcc[NUEVA_YORK,ESTAMBUL,TIERRA]
+   464 tcc[NUEVA_YORK,ESTAMBUL,TIERRA]
                     B              0             0               
-   474 tcc[NUEVA_YORK,TOKIO,TIERRA]
+   465 tcc[NUEVA_YORK,TOKIO,TIERRA]
                     NL             0             0                    -6.95205 
-   475 tcc[NUEVA_YORK,AMSTERDAM,MAR]
+   466 tcc[NUEVA_YORK,AMSTERDAM,MAR]
                     NL             0             0                  -0.0986301 
-   476 tcc[NUEVA_YORK,ESTAMBUL,MAR]
+   467 tcc[NUEVA_YORK,ESTAMBUL,MAR]
                     NL             0             0                   -0.123288 
-   477 tcc[NUEVA_YORK,TOKIO,MAR]
+   468 tcc[NUEVA_YORK,TOKIO,MAR]
                     NL             0             0                   -0.345205 
-   478 tcc[AMSTERDAM,AMSTERDAM,AIRE]
-                    NL             0             0                   -0.180822 
-   479 tcc[ESTAMBUL,AMSTERDAM,AIRE]
+   469 tcc[ESTAMBUL,AMSTERDAM,AIRE]
                     NL             0             0                    -0.20137 
-   480 tcc[TOKIO,AMSTERDAM,AIRE]
+   470 tcc[TOKIO,AMSTERDAM,AIRE]
                     NL             0             0                   -0.194521 
-   481 tcc[AMSTERDAM,AMSTERDAM,TIERRA]
-                    NL             0             0                   -0.165753 
-   482 tcc[ESTAMBUL,AMSTERDAM,TIERRA]
+   471 tcc[ESTAMBUL,AMSTERDAM,TIERRA]
                     B              0             0               
-   483 tcc[TOKIO,AMSTERDAM,TIERRA]
+   472 tcc[TOKIO,AMSTERDAM,TIERRA]
                     B              0             0               
-   484 tcc[AMSTERDAM,AMSTERDAM,MAR]
-                    NL             0             0                   -0.375342 
-   485 tcc[ESTAMBUL,AMSTERDAM,MAR]
+   473 tcc[ESTAMBUL,AMSTERDAM,MAR]
                     NL             0             0                   -0.356164 
-   486 tcc[TOKIO,AMSTERDAM,MAR]
+   474 tcc[TOKIO,AMSTERDAM,MAR]
                     B        198.208             0               
-   487 tcc[AMSTERDAM,ESTAMBUL,AIRE]
+   475 tcc[AMSTERDAM,ESTAMBUL,AIRE]
                     NL             0             0                   -0.215068 
-   488 tcc[AMSTERDAM,TOKIO,AIRE]
+   476 tcc[AMSTERDAM,TOKIO,AIRE]
                     NL             0             0                    -1.51507 
-   489 tcc[AMSTERDAM,ESTAMBUL,TIERRA]
+   477 tcc[AMSTERDAM,ESTAMBUL,TIERRA]
                     B              0             0               
-   490 tcc[AMSTERDAM,TOKIO,TIERRA]
+   478 tcc[AMSTERDAM,TOKIO,TIERRA]
                     NL             0             0                    -7.46301 
-   491 tcc[AMSTERDAM,ESTAMBUL,MAR]
+   479 tcc[AMSTERDAM,ESTAMBUL,MAR]
                     NL             0             0                   -0.450685 
-   492 tcc[AMSTERDAM,TOKIO,MAR]
+   480 tcc[AMSTERDAM,TOKIO,MAR]
                     NL             0             0                    -1.10959 
-   493 tcc[ESTAMBUL,ESTAMBUL,AIRE]
-                    NL             0             0                       < eps
-   494 tcc[TOKIO,ESTAMBUL,AIRE]
+   481 tcc[TOKIO,ESTAMBUL,AIRE]
                     NL             0             0                   -0.212329 
-   495 tcc[ESTAMBUL,ESTAMBUL,TIERRA]
-                    NL             0             0                       < eps
-   496 tcc[TOKIO,ESTAMBUL,TIERRA]
+   482 tcc[TOKIO,ESTAMBUL,TIERRA]
                     B              0             0               
-   497 tcc[ESTAMBUL,ESTAMBUL,MAR]
-                    NL             0             0                   -0.275342 
-   498 tcc[TOKIO,ESTAMBUL,MAR]
+   483 tcc[TOKIO,ESTAMBUL,MAR]
                     B        783.792             0               
-   499 tcc[ESTAMBUL,TOKIO,AIRE]
+   484 tcc[ESTAMBUL,TOKIO,AIRE]
                     NL             0             0                    -2.56164 
-   500 tcc[ESTAMBUL,TOKIO,TIERRA]
+   485 tcc[ESTAMBUL,TOKIO,TIERRA]
                     NL             0             0                    -7.36438 
-   501 tcc[ESTAMBUL,TOKIO,MAR]
+   486 tcc[ESTAMBUL,TOKIO,MAR]
                     NL             0             0                    -1.14932 
-   502 tcc[TOKIO,TOKIO,AIRE]
-                    NL             0             0                       < eps
-   503 tcc[TOKIO,TOKIO,TIERRA]
-                    NL             0             0                       < eps
-   504 tcc[TOKIO,TOKIO,MAR]
-                    NL             0             0                       < eps
-   505 tcd[SAN_PABLO,VARSOVIA,AIRE]
+   487 tcd[SAN_PABLO,VARSOVIA,AIRE]
                     NL             0             0                  -0.0671233 
-   506 tcd[SAN_PABLO,BRATISLAVA,AIRE]
+   488 tcd[SAN_PABLO,BRATISLAVA,AIRE]
                     NL             0             0                    -0.29589 
-   507 tcd[SAN_PABLO,BUCAREST,AIRE]
+   489 tcd[SAN_PABLO,BUCAREST,AIRE]
                     NL             0             0                   -0.247945 
-   508 tcd[SAN_PABLO,VARSOVIA,TIERRA]
+   490 tcd[SAN_PABLO,VARSOVIA,TIERRA]
                     B              0             0               
-   509 tcd[SAN_PABLO,BRATISLAVA,TIERRA]
+   491 tcd[SAN_PABLO,BRATISLAVA,TIERRA]
                     B              0             0               
-   510 tcd[SAN_PABLO,BUCAREST,TIERRA]
+   492 tcd[SAN_PABLO,BUCAREST,TIERRA]
                     B              0             0               
-   511 tcd[SAN_PABLO,VARSOVIA,MAR]
+   493 tcd[SAN_PABLO,VARSOVIA,MAR]
                     NL             0             0                    -5.84932 
-   512 tcd[SAN_PABLO,BRATISLAVA,MAR]
+   494 tcd[SAN_PABLO,BRATISLAVA,MAR]
                     NL             0             0                    -5.84932 
-   513 tcd[SAN_PABLO,BUCAREST,MAR]
+   495 tcd[SAN_PABLO,BUCAREST,MAR]
                     NL             0             0                        -0.1 
-   514 tcd[PANAMA,VARSOVIA,AIRE]
+   496 tcd[PANAMA,VARSOVIA,AIRE]
                     B            155             0               
-   515 tcd[PANAMA,BRATISLAVA,AIRE]
+   497 tcd[PANAMA,BRATISLAVA,AIRE]
                     NL             0             0                  -0.0849315 
-   516 tcd[PANAMA,BUCAREST,AIRE]
+   498 tcd[PANAMA,BUCAREST,AIRE]
                     NL             0             0                  -0.0479452 
-   517 tcd[PANAMA,VARSOVIA,TIERRA]
+   499 tcd[PANAMA,VARSOVIA,TIERRA]
                     B              0             0               
-   518 tcd[PANAMA,BRATISLAVA,TIERRA]
+   500 tcd[PANAMA,BRATISLAVA,TIERRA]
                     B              0             0               
-   519 tcd[PANAMA,BUCAREST,TIERRA]
+   501 tcd[PANAMA,BUCAREST,TIERRA]
                     B              0             0               
-   520 tcd[PANAMA,VARSOVIA,MAR]
+   502 tcd[PANAMA,VARSOVIA,MAR]
                     NL             0             0                    -6.23014 
-   521 tcd[PANAMA,BRATISLAVA,MAR]
+   503 tcd[PANAMA,BRATISLAVA,MAR]
                     NL             0             0                    -6.23014 
-   522 tcd[PANAMA,BUCAREST,MAR]
+   504 tcd[PANAMA,BUCAREST,MAR]
                     B              0             0               
-   523 tcd[NUEVA_YORK,VARSOVIA,AIRE]
+   505 tcd[NUEVA_YORK,VARSOVIA,AIRE]
                     B        215.208             0               
-   524 tcd[NUEVA_YORK,BRATISLAVA,AIRE]
+   506 tcd[NUEVA_YORK,BRATISLAVA,AIRE]
                     NL             0             0                  -0.0452055 
-   525 tcd[NUEVA_YORK,BUCAREST,AIRE]
+   507 tcd[NUEVA_YORK,BUCAREST,AIRE]
                     B           2090             0               
-   526 tcd[NUEVA_YORK,VARSOVIA,TIERRA]
+   508 tcd[NUEVA_YORK,VARSOVIA,TIERRA]
                     B              0             0               
-   527 tcd[NUEVA_YORK,BRATISLAVA,TIERRA]
+   509 tcd[NUEVA_YORK,BRATISLAVA,TIERRA]
                     B              0             0               
-   528 tcd[NUEVA_YORK,BUCAREST,TIERRA]
+   510 tcd[NUEVA_YORK,BUCAREST,TIERRA]
                     B              0             0               
-   529 tcd[NUEVA_YORK,VARSOVIA,MAR]
+   511 tcd[NUEVA_YORK,VARSOVIA,MAR]
                     NL             0             0                    -6.29178 
-   530 tcd[NUEVA_YORK,BRATISLAVA,MAR]
+   512 tcd[NUEVA_YORK,BRATISLAVA,MAR]
                     NL             0             0                    -6.29178 
-   531 tcd[NUEVA_YORK,BUCAREST,MAR]
+   513 tcd[NUEVA_YORK,BUCAREST,MAR]
                     NL             0             0                   -0.106849 
-   532 tcd[AMSTERDAM,VARSOVIA,AIRE]
+   514 tcd[AMSTERDAM,VARSOVIA,AIRE]
                     B           2900             0               
-   533 tcd[AMSTERDAM,BRATISLAVA,AIRE]
+   515 tcd[AMSTERDAM,BRATISLAVA,AIRE]
                     NL             0             0                  -0.0671233 
-   534 tcd[AMSTERDAM,BUCAREST,AIRE]
+   516 tcd[AMSTERDAM,BUCAREST,AIRE]
                     NL             0             0                  -0.0164384 
-   535 tcd[AMSTERDAM,VARSOVIA,TIERRA]
+   517 tcd[AMSTERDAM,VARSOVIA,TIERRA]
                     NL             0             0                  -0.0287671 
-   536 tcd[AMSTERDAM,BRATISLAVA,TIERRA]
+   518 tcd[AMSTERDAM,BRATISLAVA,TIERRA]
                     NL             0             0                  -0.0219178 
-   537 tcd[AMSTERDAM,BUCAREST,TIERRA]
+   519 tcd[AMSTERDAM,BUCAREST,TIERRA]
                     NL             0             0                  -0.0123288 
-   538 tcd[AMSTERDAM,VARSOVIA,MAR]
+   520 tcd[AMSTERDAM,VARSOVIA,MAR]
                     NL             0             0                    -6.80274 
-   539 tcd[AMSTERDAM,BRATISLAVA,MAR]
+   521 tcd[AMSTERDAM,BRATISLAVA,MAR]
                     NL             0             0                    -6.80274 
-   540 tcd[AMSTERDAM,BUCAREST,MAR]
+   522 tcd[AMSTERDAM,BUCAREST,MAR]
                     NL             0             0                   -0.293151 
-   541 tcd[ESTAMBUL,VARSOVIA,AIRE]
+   523 tcd[ESTAMBUL,VARSOVIA,AIRE]
                     NL             0             0                  -0.0410959 
-   542 tcd[ESTAMBUL,BRATISLAVA,AIRE]
+   524 tcd[ESTAMBUL,BRATISLAVA,AIRE]
                     B           1900             0               
-   543 tcd[ESTAMBUL,BUCAREST,AIRE]
+   525 tcd[ESTAMBUL,BUCAREST,AIRE]
                     B            610             0               
-   544 tcd[ESTAMBUL,VARSOVIA,TIERRA]
+   526 tcd[ESTAMBUL,VARSOVIA,TIERRA]
                     B              0             0               
-   545 tcd[ESTAMBUL,BRATISLAVA,TIERRA]
+   527 tcd[ESTAMBUL,BRATISLAVA,TIERRA]
                     B              0             0               
-   546 tcd[ESTAMBUL,BUCAREST,TIERRA]
+   528 tcd[ESTAMBUL,BUCAREST,TIERRA]
                     NL             0             0                  -0.0410959 
-   547 tcd[ESTAMBUL,VARSOVIA,MAR]
+   529 tcd[ESTAMBUL,VARSOVIA,MAR]
                     NL             0             0                    -6.70411 
-   548 tcd[ESTAMBUL,BRATISLAVA,MAR]
+   530 tcd[ESTAMBUL,BRATISLAVA,MAR]
                     NL             0             0                    -6.70411 
-   549 tcd[ESTAMBUL,BUCAREST,MAR]
+   531 tcd[ESTAMBUL,BUCAREST,MAR]
                     NL             0             0                   -0.231507 
-   550 tcd[TOKIO,VARSOVIA,AIRE]
+   532 tcd[TOKIO,VARSOVIA,AIRE]
                     NL             0             0                  -0.0328767 
-   551 tcd[TOKIO,BRATISLAVA,AIRE]
+   533 tcd[TOKIO,BRATISLAVA,AIRE]
                     NL             0             0                  -0.0986301 
-   552 tcd[TOKIO,BUCAREST,AIRE]
+   534 tcd[TOKIO,BUCAREST,AIRE]
                     NL             0             0                  -0.0794521 
-   553 tcd[TOKIO,VARSOVIA,TIERRA]
+   535 tcd[TOKIO,VARSOVIA,TIERRA]
                     B              0             0               
-   554 tcd[TOKIO,BRATISLAVA,TIERRA]
+   536 tcd[TOKIO,BRATISLAVA,TIERRA]
                     B              0             0               
-   555 tcd[TOKIO,BUCAREST,TIERRA]
+   537 tcd[TOKIO,BUCAREST,TIERRA]
                     B              0             0               
-   556 tcd[TOKIO,VARSOVIA,MAR]
+   538 tcd[TOKIO,VARSOVIA,MAR]
                     NL             0             0                    -6.18904 
-   557 tcd[TOKIO,BRATISLAVA,MAR]
+   539 tcd[TOKIO,BRATISLAVA,MAR]
                     NL             0             0                    -6.18904 
-   558 tcd[TOKIO,BUCAREST,MAR]
+   540 tcd[TOKIO,BUCAREST,MAR]
                     NL             0             0                  -0.0424658 
 
 Karush-Kuhn-Tucker optimality conditions:
 
 KKT.PE: max.abs.err = 4.66e-10 on row 264
-        max.rel.err = 2.94e-15 on row 52
+        max.rel.err = 3.20e-15 on row 52
         High quality
 
 KKT.PB: max.abs.err = 0.00e+00 on row 0
         max.rel.err = 0.00e+00 on row 0
         High quality
 
-KKT.DE: max.abs.err = 9.83e-15 on column 178
-        max.rel.err = 5.21e-15 on column 178
+KKT.DE: max.abs.err = 1.07e-14 on column 178
+        max.rel.err = 5.65e-15 on column 178
         High quality
 
-KKT.DB: max.abs.err = 1.61e-15 on column 141
-        max.rel.err = 1.61e-15 on column 141
+KKT.DB: max.abs.err = 3.37e-15 on row 19
+        max.rel.err = 3.37e-15 on row 19
         High quality
 
 End of output
