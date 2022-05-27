@@ -1,7 +1,7 @@
 Problem:    tp2
-Rows:       57
+Rows:       265
 Columns:    558
-Non-zeros:  2160
+Non-zeros:  2368
 Status:     OPTIMAL
 Objective:  z = 7870.208219 (MAXimum)
 
@@ -26,11 +26,11 @@ Objective:  z = 7870.208219 (MAXimum)
      9 capacidad_centro[SAN_PABLO,MAR]
                     B              0                         800 
     10 capacidad_centro[PANAMA,AIRE]
-                    B             90                        1800 
+                    B              0                        1800 
     11 capacidad_centro[PANAMA,TIERRA]
                     B              0                        1100 
     12 capacidad_centro[PANAMA,MAR]
-                    B             65                        1900 
+                    B            155                        1900 
     13 capacidad_centro[NUEVA_YORK,AIRE]
                     B              0                        1800 
     14 capacidad_centro[NUEVA_YORK,TIERRA]
@@ -54,7 +54,7 @@ Objective:  z = 7870.208219 (MAXimum)
     23 capacidad_centro[TOKIO,TIERRA]
                     B              0                          -0 
     24 capacidad_centro[TOKIO,MAR]
-                    B            344                        2000 
+                    B            982                        2000 
     25 capacidad_destino[VARSOVIA,AIRE]
                     B        3270.21                        3300 
     26 capacidad_destino[VARSOVIA,TIERRA]
@@ -117,9 +117,425 @@ Objective:  z = 7870.208219 (MAXimum)
                     NU           300                         300      0.316438 
     55 oferta_origenes[NUEVA_ZELANDA]
                     B              0                         120 
-    56 limite_dinero
+    56 toc_invalido[AIRE,ESPANA,SAN_PABLO]
+                    NS             0            -0             =      -7.58219 
+    57 toc_invalido[AIRE,ESPANA,PANAMA]
+                    NS             0            -0             =      -7.20137 
+    58 toc_invalido[AIRE,ESPANA,NUEVA_YORK]
+                    NS             0            -0             =      -7.13973 
+    59 toc_invalido[AIRE,ESPANA,TOKIO]
+                    NS             0            -0             =      -7.24247 
+    60 toc_invalido[AIRE,IRLANDA,SAN_PABLO]
+                    NS             0            -0             =      -7.59315 
+    61 toc_invalido[AIRE,IRLANDA,PANAMA]
+                    NS             0            -0             =      -7.21233 
+    62 toc_invalido[AIRE,IRLANDA,NUEVA_YORK]
+                    NS             0            -0             =      -7.15068 
+    63 toc_invalido[AIRE,IRLANDA,TOKIO]
+                    NS             0            -0             =      -7.25342 
+    64 toc_invalido[AIRE,ALEMANIA,SAN_PABLO]
+                    NS             0            -0             =      -7.59178 
+    65 toc_invalido[AIRE,ALEMANIA,PANAMA]
+                    NS             0            -0             =      -7.21096 
+    66 toc_invalido[AIRE,ALEMANIA,NUEVA_YORK]
+                    NS             0            -0             =      -7.14932 
+    67 toc_invalido[AIRE,ALEMANIA,TOKIO]
+                    NS             0            -0             =      -7.25205 
+    68 toc_invalido[AIRE,CHINA,SAN_PABLO]
+                    NS             0            -0             =      -7.03014 
+    69 toc_invalido[AIRE,CHINA,PANAMA]
+                    NS             0            -0             =      -6.64932 
+    70 toc_invalido[AIRE,CHINA,NUEVA_YORK]
+                    NS             0            -0             =      -6.58767 
+    71 toc_invalido[AIRE,AUSTRALIA,SAN_PABLO]
+                    NS             0            -0             =      -7.16575 
+    72 toc_invalido[AIRE,AUSTRALIA,NUEVA_YORK]
+                    NS             0            -0             =      -6.72329 
+    73 toc_invalido[AIRE,NUEVA_ZELANDA,SAN_PABLO]
+                    NS             0            -0             =      -6.84932 
+    74 toc_invalido[AIRE,NUEVA_ZELANDA,NUEVA_YORK]
+                    NS             0            -0             =      -6.40685 
+    75 toc_invalido[TIERRA,ARGENTINA,PANAMA]
+                    NS             0            -0             =      -6.52466 
+    76 toc_invalido[TIERRA,ARGENTINA,NUEVA_YORK]
+                    NS             0            -0             =      -6.46301 
+    77 toc_invalido[TIERRA,ARGENTINA,AMSTERDAM]
+                    NS             0            -0             =      -6.11781 
+    78 toc_invalido[TIERRA,ARGENTINA,ESTAMBUL]
+                    NS             0            -0             =      -6.05068 
+    79 toc_invalido[TIERRA,ARGENTINA,TOKIO]
+                    B              0            -0             = 
+    80 toc_invalido[TIERRA,URUGUAY,PANAMA]
+                    NS             0            -0             =      -6.58493 
+    81 toc_invalido[TIERRA,URUGUAY,NUEVA_YORK]
+                    NS             0            -0             =      -6.52329 
+    82 toc_invalido[TIERRA,URUGUAY,AMSTERDAM]
+                    NS             0            -0             =      -6.17808 
+    83 toc_invalido[TIERRA,URUGUAY,ESTAMBUL]
+                    NS             0            -0             =      -6.11096 
+    84 toc_invalido[TIERRA,URUGUAY,TOKIO]
+                    B              0            -0             = 
+    85 toc_invalido[TIERRA,CHILE,PANAMA]
+                    NS             0            -0             =      -6.72603 
+    86 toc_invalido[TIERRA,CHILE,NUEVA_YORK]
+                    NS             0            -0             =      -6.66438 
+    87 toc_invalido[TIERRA,CHILE,AMSTERDAM]
+                    NS             0            -0             =      -6.31918 
+    88 toc_invalido[TIERRA,CHILE,ESTAMBUL]
+                    NS             0            -0             =      -6.25205 
+    89 toc_invalido[TIERRA,CHILE,TOKIO]
+                    B              0            -0             = 
+    90 toc_invalido[TIERRA,BRASIL,PANAMA]
+                    NS             0            -0             =      -6.46849 
+    91 toc_invalido[TIERRA,BRASIL,NUEVA_YORK]
+                    NS             0            -0             =      -6.40685 
+    92 toc_invalido[TIERRA,BRASIL,AMSTERDAM]
+                    NS             0            -0             =      -6.06164 
+    93 toc_invalido[TIERRA,BRASIL,ESTAMBUL]
+                    NS             0            -0             =      -5.99452 
+    94 toc_invalido[TIERRA,BRASIL,TOKIO]
+                    B              0            -0             = 
+    95 toc_invalido[TIERRA,COLOMBIA,PANAMA]
+                    NS             0            -0             =      -6.77808 
+    96 toc_invalido[TIERRA,COLOMBIA,NUEVA_YORK]
+                    NS             0            -0             =      -6.71644 
+    97 toc_invalido[TIERRA,COLOMBIA,AMSTERDAM]
+                    NS             0            -0             =      -6.37123 
+    98 toc_invalido[TIERRA,COLOMBIA,ESTAMBUL]
+                    NS             0            -0             =      -6.30411 
+    99 toc_invalido[TIERRA,COLOMBIA,TOKIO]
+                    B              0            -0             = 
+   100 toc_invalido[TIERRA,PANAMA,SAN_PABLO]
+                    NS             0            -0             =      -7.23014 
+   101 toc_invalido[TIERRA,PANAMA,AMSTERDAM]
+                    NS             0            -0             =      -6.44247 
+   102 toc_invalido[TIERRA,PANAMA,ESTAMBUL]
+                    NS             0            -0             =      -6.37534 
+   103 toc_invalido[TIERRA,PANAMA,TOKIO]
+                    B              0            -0             = 
+   104 toc_invalido[TIERRA,REPUBLICA_DOMINICANA,SAN_PABLO]
+                    NS             0            -0             =      -7.12466 
+   105 toc_invalido[TIERRA,REPUBLICA_DOMINICANA,PANAMA]
+                    NS             0            -0             =      -6.74384 
+   106 toc_invalido[TIERRA,REPUBLICA_DOMINICANA,NUEVA_YORK]
+                    NS             0            -0             =      -6.68219 
+   107 toc_invalido[TIERRA,REPUBLICA_DOMINICANA,AMSTERDAM]
+                    NS             0            -0             =      -6.33699 
+   108 toc_invalido[TIERRA,REPUBLICA_DOMINICANA,ESTAMBUL]
+                    NS             0            -0             =      -6.26986 
+   109 toc_invalido[TIERRA,REPUBLICA_DOMINICANA,TOKIO]
+                    B              0            -0             = 
+   110 toc_invalido[TIERRA,MEXICO,SAN_PABLO]
+                    NS             0            -0             =      -7.23014 
+   111 toc_invalido[TIERRA,MEXICO,PANAMA]
+                    NS             0            -0             =      -6.84932 
+   112 toc_invalido[TIERRA,MEXICO,AMSTERDAM]
+                    NS             0            -0             =      -6.44247 
+   113 toc_invalido[TIERRA,MEXICO,ESTAMBUL]
+                    NS             0            -0             =      -6.37534 
+   114 toc_invalido[TIERRA,MEXICO,TOKIO]
+                    B              0            -0             = 
+   115 toc_invalido[TIERRA,ESTADOS_UNIDOS,SAN_PABLO]
+                    NS             0            -0             =      -7.29178 
+   116 toc_invalido[TIERRA,ESTADOS_UNIDOS,PANAMA]
+                    NS             0            -0             =      -6.91096 
+   117 toc_invalido[TIERRA,ESTADOS_UNIDOS,AMSTERDAM]
+                    NS             0            -0             =      -6.50411 
+   118 toc_invalido[TIERRA,ESTADOS_UNIDOS,ESTAMBUL]
+                    NS             0            -0             =      -6.43699 
+   119 toc_invalido[TIERRA,ESTADOS_UNIDOS,TOKIO]
+                    B              0            -0             = 
+   120 toc_invalido[TIERRA,CANADA,SAN_PABLO]
+                    NS             0            -0             =      -7.24658 
+   121 toc_invalido[TIERRA,CANADA,PANAMA]
+                    NS             0            -0             =      -6.86575 
+   122 toc_invalido[TIERRA,CANADA,AMSTERDAM]
+                    NS             0            -0             =       -6.4589 
+   123 toc_invalido[TIERRA,CANADA,ESTAMBUL]
+                    NS             0            -0             =      -6.39178 
+   124 toc_invalido[TIERRA,CANADA,TOKIO]
+                    B              0            -0             = 
+   125 toc_invalido[TIERRA,ESPANA,SAN_PABLO]
+                    NS             0            -0             =      -7.58219 
+   126 toc_invalido[TIERRA,ESPANA,PANAMA]
+                    NS             0            -0             =      -7.20137 
+   127 toc_invalido[TIERRA,ESPANA,NUEVA_YORK]
+                    NS             0            -0             =      -7.13973 
+   128 toc_invalido[TIERRA,ESPANA,ESTAMBUL]
+                    NS             0            -0             =       -6.7274 
+   129 toc_invalido[TIERRA,ESPANA,TOKIO]
+                    B              0            -0             = 
+   130 toc_invalido[TIERRA,REINO_UNIDO,SAN_PABLO]
+                    NS             0            -0             =      -7.50274 
+   131 toc_invalido[TIERRA,REINO_UNIDO,PANAMA]
+                    NS             0            -0             =      -7.12192 
+   132 toc_invalido[TIERRA,REINO_UNIDO,NUEVA_YORK]
+                    NS             0            -0             =      -7.06027 
+   133 toc_invalido[TIERRA,REINO_UNIDO,ESTAMBUL]
+                    NS             0            -0             =      -6.64795 
+   134 toc_invalido[TIERRA,REINO_UNIDO,TOKIO]
+                    B              0            -0             = 
+   135 toc_invalido[TIERRA,IRLANDA,SAN_PABLO]
+                    NS             0            -0             =      -7.59315 
+   136 toc_invalido[TIERRA,IRLANDA,PANAMA]
+                    NS             0            -0             =      -7.21233 
+   137 toc_invalido[TIERRA,IRLANDA,NUEVA_YORK]
+                    NS             0            -0             =      -7.15068 
+   138 toc_invalido[TIERRA,IRLANDA,AMSTERDAM]
+                    NS             0            -0             =      -6.80548 
+   139 toc_invalido[TIERRA,IRLANDA,ESTAMBUL]
+                    NS             0            -0             =      -6.73836 
+   140 toc_invalido[TIERRA,IRLANDA,TOKIO]
+                    B              0            -0             = 
+   141 toc_invalido[TIERRA,PAISES_BAJOS,SAN_PABLO]
+                    NS             0            -0             =      -7.63699 
+   142 toc_invalido[TIERRA,PAISES_BAJOS,PANAMA]
+                    NS             0            -0             =      -7.25616 
+   143 toc_invalido[TIERRA,PAISES_BAJOS,NUEVA_YORK]
+                    NS             0            -0             =      -7.19452 
+   144 toc_invalido[TIERRA,PAISES_BAJOS,ESTAMBUL]
+                    NS             0            -0             =      -6.78219 
+   145 toc_invalido[TIERRA,PAISES_BAJOS,TOKIO]
+                    B              0            -0             = 
+   146 toc_invalido[TIERRA,ALEMANIA,SAN_PABLO]
+                    NS             0            -0             =      -7.59178 
+   147 toc_invalido[TIERRA,ALEMANIA,PANAMA]
+                    NS             0            -0             =      -7.21096 
+   148 toc_invalido[TIERRA,ALEMANIA,NUEVA_YORK]
+                    NS             0            -0             =      -7.14932 
+   149 toc_invalido[TIERRA,ALEMANIA,ESTAMBUL]
+                    NS             0            -0             =      -6.73699 
+   150 toc_invalido[TIERRA,ALEMANIA,TOKIO]
+                    B              0            -0             = 
+   151 toc_invalido[TIERRA,TURQUIA,SAN_PABLO]
+                    NS             0            -0             =      -7.70411 
+   152 toc_invalido[TIERRA,TURQUIA,PANAMA]
+                    NS             0            -0             =      -7.32329 
+   153 toc_invalido[TIERRA,TURQUIA,NUEVA_YORK]
+                    NS             0            -0             =      -7.26164 
+   154 toc_invalido[TIERRA,TURQUIA,AMSTERDAM]
+                    NS             0            -0             =      -6.91644 
+   155 toc_invalido[TIERRA,TURQUIA,TOKIO]
+                    B              0            -0             = 
+   156 toc_invalido[TIERRA,ISRAEL,SAN_PABLO]
+                    NS             0            -0             =      -7.54247 
+   157 toc_invalido[TIERRA,ISRAEL,PANAMA]
+                    NS             0            -0             =      -7.16164 
+   158 toc_invalido[TIERRA,ISRAEL,NUEVA_YORK]
+                    NS             0            -0             =          -7.1 
+   159 toc_invalido[TIERRA,ISRAEL,AMSTERDAM]
+                    NS             0            -0             =      -6.75479 
+   160 toc_invalido[TIERRA,ISRAEL,TOKIO]
+                    B              0            -0             = 
+   161 toc_invalido[TIERRA,TAIWAN,SAN_PABLO]
+                    NS             0            -0             =      -7.09178 
+   162 toc_invalido[TIERRA,TAIWAN,PANAMA]
+                    NS             0            -0             =      -6.71096 
+   163 toc_invalido[TIERRA,TAIWAN,NUEVA_YORK]
+                    NS             0            -0             =      -6.64932 
+   164 toc_invalido[TIERRA,TAIWAN,AMSTERDAM]
+                    NS             0            -0             =      -6.30411 
+   165 toc_invalido[TIERRA,TAIWAN,ESTAMBUL]
+                    NS             0            -0             =      -6.23699 
+   166 toc_invalido[TIERRA,TAIWAN,TOKIO]
+                    B              0            -0             = 
+   167 toc_invalido[TIERRA,JAPON,SAN_PABLO]
+                    NS             0            -0             =      -7.18904 
+   168 toc_invalido[TIERRA,JAPON,PANAMA]
+                    NS             0            -0             =      -6.80822 
+   169 toc_invalido[TIERRA,JAPON,NUEVA_YORK]
+                    NS             0            -0             =      -6.74658 
+   170 toc_invalido[TIERRA,JAPON,AMSTERDAM]
+                    NS             0            -0             =      -6.40137 
+   171 toc_invalido[TIERRA,JAPON,ESTAMBUL]
+                    NS             0            -0             =      -6.33425 
+   172 toc_invalido[TIERRA,CHINA,SAN_PABLO]
+                    NS             0            -0             =      -7.03014 
+   173 toc_invalido[TIERRA,CHINA,PANAMA]
+                    NS             0            -0             =      -6.64932 
+   174 toc_invalido[TIERRA,CHINA,NUEVA_YORK]
+                    NS             0            -0             =      -6.58767 
+   175 toc_invalido[TIERRA,CHINA,AMSTERDAM]
+                    NS             0            -0             =      -6.24247 
+   176 toc_invalido[TIERRA,CHINA,ESTAMBUL]
+                    NS             0            -0             =      -6.17534 
+   177 toc_invalido[TIERRA,CHINA,TOKIO]
+                    B              0            -0             = 
+   178 toc_invalido[TIERRA,AUSTRALIA,SAN_PABLO]
+                    NS             0            -0             =      -7.16575 
+   179 toc_invalido[TIERRA,AUSTRALIA,PANAMA]
+                    NS             0            -0             =      -6.78493 
+   180 toc_invalido[TIERRA,AUSTRALIA,NUEVA_YORK]
+                    NS             0            -0             =      -6.72329 
+   181 toc_invalido[TIERRA,AUSTRALIA,AMSTERDAM]
+                    NS             0            -0             =      -6.37808 
+   182 toc_invalido[TIERRA,AUSTRALIA,ESTAMBUL]
+                    NS             0            -0             =      -6.31096 
+   183 toc_invalido[TIERRA,AUSTRALIA,TOKIO]
+                    B              0            -0             = 
+   184 toc_invalido[TIERRA,NUEVA_ZELANDA,SAN_PABLO]
+                    NS             0            -0             =      -6.84932 
+   185 toc_invalido[TIERRA,NUEVA_ZELANDA,PANAMA]
+                    NS             0            -0             =      -6.46849 
+   186 toc_invalido[TIERRA,NUEVA_ZELANDA,NUEVA_YORK]
+                    NS             0            -0             =      -6.40685 
+   187 toc_invalido[TIERRA,NUEVA_ZELANDA,AMSTERDAM]
+                    NS             0            -0             =      -6.06164 
+   188 toc_invalido[TIERRA,NUEVA_ZELANDA,ESTAMBUL]
+                    NS             0            -0             =      -5.99452 
+   189 toc_invalido[TIERRA,NUEVA_ZELANDA,TOKIO]
+                    B              0            -0             = 
+   190 toc_invalido[MAR,ESPANA,SAN_PABLO]
+                    NS             0            -0             =      -7.58219 
+   191 toc_invalido[MAR,ESPANA,PANAMA]
+                    NS             0            -0             =      -7.20137 
+   192 toc_invalido[MAR,ESPANA,NUEVA_YORK]
+                    NS             0            -0             =      -7.13973 
+   193 toc_invalido[MAR,ESPANA,TOKIO]
+                    NS             0            -0             =      -7.24247 
+   194 toc_invalido[MAR,IRLANDA,SAN_PABLO]
+                    NS             0            -0             =      -7.59315 
+   195 toc_invalido[MAR,IRLANDA,PANAMA]
+                    NS             0            -0             =      -7.21233 
+   196 toc_invalido[MAR,IRLANDA,NUEVA_YORK]
+                    NS             0            -0             =      -7.15068 
+   197 toc_invalido[MAR,IRLANDA,TOKIO]
+                    NS             0            -0             =      -7.25342 
+   198 toc_invalido[MAR,ALEMANIA,SAN_PABLO]
+                    NS             0            -0             =      -7.59178 
+   199 toc_invalido[MAR,ALEMANIA,PANAMA]
+                    NS             0            -0             =      -7.21096 
+   200 toc_invalido[MAR,ALEMANIA,NUEVA_YORK]
+                    NS             0            -0             =      -7.14932 
+   201 toc_invalido[MAR,ALEMANIA,TOKIO]
+                    NS             0            -0             =      -7.25205 
+   202 toc_invalido[MAR,CHINA,SAN_PABLO]
+                    NS             0            -0             =      -7.03014 
+   203 toc_invalido[MAR,CHINA,PANAMA]
+                    NS             0            -0             =      -6.64932 
+   204 toc_invalido[MAR,CHINA,NUEVA_YORK]
+                    NS             0            -0             =      -6.58767 
+   205 toc_invalido[MAR,AUSTRALIA,SAN_PABLO]
+                    NS             0            -0             =      -7.16575 
+   206 toc_invalido[MAR,AUSTRALIA,NUEVA_YORK]
+                    NS             0            -0             =      -6.72329 
+   207 toc_invalido[MAR,NUEVA_ZELANDA,SAN_PABLO]
+                    NS             0            -0             =      -6.84932 
+   208 toc_invalido[MAR,NUEVA_ZELANDA,NUEVA_YORK]
+                    NS             0            -0             =      -6.40685 
+   209 tcc_invalido[TIERRA,SAN_PABLO,PANAMA]
+                    NS             0            -0             =      -6.46849 
+   210 tcc_invalido[TIERRA,SAN_PABLO,NUEVA_YORK]
+                    NS             0            -0             =      -6.40685 
+   211 tcc_invalido[TIERRA,SAN_PABLO,AMSTERDAM]
+                    NS             0            -0             =      -6.06164 
+   212 tcc_invalido[TIERRA,SAN_PABLO,ESTAMBUL]
+                    NS             0            -0             =      -5.99452 
+   213 tcc_invalido[TIERRA,SAN_PABLO,TOKIO]
+                    B              0            -0             = 
+   214 tcc_invalido[TIERRA,PANAMA,SAN_PABLO]
+                    NS             0            -0             =      -7.23014 
+   215 tcc_invalido[TIERRA,PANAMA,AMSTERDAM]
+                    NS             0            -0             =      -6.44247 
+   216 tcc_invalido[TIERRA,PANAMA,ESTAMBUL]
+                    NS             0            -0             =      -6.37534 
+   217 tcc_invalido[TIERRA,PANAMA,TOKIO]
+                    B              0            -0             = 
+   218 tcc_invalido[TIERRA,NUEVA_YORK,SAN_PABLO]
+                    NS             0            -0             =      -7.29178 
+   219 tcc_invalido[TIERRA,NUEVA_YORK,PANAMA]
+                    NS             0            -0             =      -6.91096 
+   220 tcc_invalido[TIERRA,NUEVA_YORK,AMSTERDAM]
+                    NS             0            -0             =      -6.50411 
+   221 tcc_invalido[TIERRA,NUEVA_YORK,ESTAMBUL]
+                    NS             0            -0             =      -6.43699 
+   222 tcc_invalido[TIERRA,NUEVA_YORK,TOKIO]
+                    B              0            -0             = 
+   223 tcc_invalido[TIERRA,AMSTERDAM,SAN_PABLO]
+                    NS             0            -0             =      -7.80274 
+   224 tcc_invalido[TIERRA,AMSTERDAM,PANAMA]
+                    NS             0            -0             =      -7.42192 
+   225 tcc_invalido[TIERRA,AMSTERDAM,NUEVA_YORK]
+                    NS             0            -0             =      -7.36027 
+   226 tcc_invalido[TIERRA,AMSTERDAM,ESTAMBUL]
+                    NS             0            -0             =      -6.94795 
+   227 tcc_invalido[TIERRA,AMSTERDAM,TOKIO]
+                    B              0            -0             = 
+   228 tcc_invalido[TIERRA,ESTAMBUL,SAN_PABLO]
+                    NS             0            -0             =      -7.70411 
+   229 tcc_invalido[TIERRA,ESTAMBUL,PANAMA]
+                    NS             0            -0             =      -7.32329 
+   230 tcc_invalido[TIERRA,ESTAMBUL,NUEVA_YORK]
+                    NS             0            -0             =      -7.26164 
+   231 tcc_invalido[TIERRA,ESTAMBUL,AMSTERDAM]
+                    NS             0            -0             =      -6.91644 
+   232 tcc_invalido[TIERRA,ESTAMBUL,TOKIO]
+                    B              0            -0             = 
+   233 tcc_invalido[TIERRA,TOKIO,SAN_PABLO]
+                    NS             0            -0             =      -7.18904 
+   234 tcc_invalido[TIERRA,TOKIO,PANAMA]
+                    NS             0            -0             =      -6.80822 
+   235 tcc_invalido[TIERRA,TOKIO,NUEVA_YORK]
+                    NS             0            -0             =      -6.74658 
+   236 tcc_invalido[TIERRA,TOKIO,AMSTERDAM]
+                    NS             0            -0             =      -6.40137 
+   237 tcc_invalido[TIERRA,TOKIO,ESTAMBUL]
+                    NS             0            -0             =      -6.33425 
+   238 tcd_invalido[TIERRA,SAN_PABLO,VARSOVIA]
+                    NS             0            -0             =      -5.84932 
+   239 tcd_invalido[TIERRA,SAN_PABLO,BRATISLAVA]
+                    NS             0            -0             =      -5.84932 
+   240 tcd_invalido[TIERRA,SAN_PABLO,BUCAREST]
+                    NS             0            -0             =      -5.84932 
+   241 tcd_invalido[TIERRA,PANAMA,VARSOVIA]
+                    NS             0            -0             =      -6.23014 
+   242 tcd_invalido[TIERRA,PANAMA,BRATISLAVA]
+                    NS             0            -0             =      -6.23014 
+   243 tcd_invalido[TIERRA,PANAMA,BUCAREST]
+                    NS             0            -0             =      -6.23014 
+   244 tcd_invalido[TIERRA,NUEVA_YORK,VARSOVIA]
+                    NS             0            -0             =      -6.29178 
+   245 tcd_invalido[TIERRA,NUEVA_YORK,BRATISLAVA]
+                    NS             0            -0             =      -6.29178 
+   246 tcd_invalido[TIERRA,NUEVA_YORK,BUCAREST]
+                    NS             0            -0             =      -6.29178 
+   247 tcd_invalido[TIERRA,ESTAMBUL,VARSOVIA]
+                    NS             0            -0             =      -6.70411 
+   248 tcd_invalido[TIERRA,ESTAMBUL,BRATISLAVA]
+                    NS             0            -0             =      -6.70411 
+   249 tcd_invalido[TIERRA,TOKIO,VARSOVIA]
+                    NS             0            -0             =      -6.18904 
+   250 tcd_invalido[TIERRA,TOKIO,BRATISLAVA]
+                    NS             0            -0             =      -6.18904 
+   251 tcd_invalido[TIERRA,TOKIO,BUCAREST]
+                    NS             0            -0             =      -6.18904 
+   252 tcd_invalido[MAR,SAN_PABLO,VARSOVIA]
+                    B              0            -0             = 
+   253 tcd_invalido[MAR,SAN_PABLO,BRATISLAVA]
+                    B              0            -0             = 
+   254 tcd_invalido[MAR,PANAMA,VARSOVIA]
+                    B              0            -0             = 
+   255 tcd_invalido[MAR,PANAMA,BRATISLAVA]
+                    B              0            -0             = 
+   256 tcd_invalido[MAR,NUEVA_YORK,VARSOVIA]
+                    B              0            -0             = 
+   257 tcd_invalido[MAR,NUEVA_YORK,BRATISLAVA]
+                    B              0            -0             = 
+   258 tcd_invalido[MAR,AMSTERDAM,VARSOVIA]
+                    B              0            -0             = 
+   259 tcd_invalido[MAR,AMSTERDAM,BRATISLAVA]
+                    B              0            -0             = 
+   260 tcd_invalido[MAR,ESTAMBUL,VARSOVIA]
+                    B              0            -0             = 
+   261 tcd_invalido[MAR,ESTAMBUL,BRATISLAVA]
+                    B              0            -0             = 
+   262 tcd_invalido[MAR,TOKIO,VARSOVIA]
+                    B              0            -0             = 
+   263 tcd_invalido[MAR,TOKIO,BRATISLAVA]
+                    B              0            -0             = 
+   264 limite_dinero
                     NU         2e+06                       2e+06    0.00136986 
-    57 z            B        7870.21                             
+   265 z            B        7870.21                             
 
    No. Column name  St   Activity     Lower bound   Upper bound    Marginal
 ------ ------------ -- ------------- ------------- ------------- -------------
@@ -144,15 +560,15 @@ Objective:  z = 7870.208219 (MAXimum)
     10 toc[CANADA,SAN_PABLO,AIRE]
                     NL             0             0                   -0.978082 
     11 toc[ESPANA,SAN_PABLO,AIRE]
-                    NL             0             0                    -7.58219 
+                    B              0             0               
     12 toc[REINO_UNIDO,SAN_PABLO,AIRE]
                     NL             0             0                    -1.10685 
     13 toc[IRLANDA,SAN_PABLO,AIRE]
-                    NL             0             0                    -7.59315 
+                    B              0             0               
     14 toc[PAISES_BAJOS,SAN_PABLO,AIRE]
                     NL             0             0                    -1.23425 
     15 toc[ALEMANIA,SAN_PABLO,AIRE]
-                    NL             0             0                    -7.59178 
+                    B              0             0               
     16 toc[TURQUIA,SAN_PABLO,AIRE]
                     NL             0             0                    -1.33151 
     17 toc[ISRAEL,SAN_PABLO,AIRE]
@@ -162,11 +578,11 @@ Objective:  z = 7870.208219 (MAXimum)
     19 toc[JAPON,SAN_PABLO,AIRE]
                     NL             0             0                     -1.2137 
     20 toc[CHINA,SAN_PABLO,AIRE]
-                    NL             0             0                    -7.03014 
+                    B              0             0               
     21 toc[AUSTRALIA,SAN_PABLO,AIRE]
-                    NL             0             0                    -7.16575 
+                    B              0             0               
     22 toc[NUEVA_ZELANDA,SAN_PABLO,AIRE]
-                    NL             0             0                    -6.84932 
+                    B              0             0               
     23 toc[ARGENTINA,SAN_PABLO,TIERRA]
                     NL             0             0                   -0.516438 
     24 toc[URUGUAY,SAN_PABLO,TIERRA]
@@ -178,39 +594,39 @@ Objective:  z = 7870.208219 (MAXimum)
     27 toc[COLOMBIA,SAN_PABLO,TIERRA]
                     NL             0             0                   -0.953425 
     28 toc[PANAMA,SAN_PABLO,TIERRA]
-                    NL             0             0                    -7.23014 
+                    B              0             0               
     29 toc[REPUBLICA_DOMINICANA,SAN_PABLO,TIERRA]
-                    NL             0             0                    -7.12466 
+                    B              0             0               
     30 toc[MEXICO,SAN_PABLO,TIERRA]
-                    NL             0             0                    -7.23014 
+                    B              0             0               
     31 toc[ESTADOS_UNIDOS,SAN_PABLO,TIERRA]
-                    NL             0             0                    -7.29178 
+                    B              0             0               
     32 toc[CANADA,SAN_PABLO,TIERRA]
-                    NL             0             0                    -7.24658 
+                    B              0             0               
     33 toc[ESPANA,SAN_PABLO,TIERRA]
-                    NL             0             0                    -7.58219 
+                    B              0             0               
     34 toc[REINO_UNIDO,SAN_PABLO,TIERRA]
-                    NL             0             0                    -7.50274 
+                    B              0             0               
     35 toc[IRLANDA,SAN_PABLO,TIERRA]
-                    NL             0             0                    -7.59315 
+                    B              0             0               
     36 toc[PAISES_BAJOS,SAN_PABLO,TIERRA]
-                    NL             0             0                    -7.63699 
+                    B              0             0               
     37 toc[ALEMANIA,SAN_PABLO,TIERRA]
-                    NL             0             0                    -7.59178 
+                    B              0             0               
     38 toc[TURQUIA,SAN_PABLO,TIERRA]
-                    NL             0             0                    -7.70411 
+                    B              0             0               
     39 toc[ISRAEL,SAN_PABLO,TIERRA]
-                    NL             0             0                    -7.54247 
+                    B              0             0               
     40 toc[TAIWAN,SAN_PABLO,TIERRA]
-                    NL             0             0                    -7.09178 
+                    B              0             0               
     41 toc[JAPON,SAN_PABLO,TIERRA]
-                    NL             0             0                    -7.18904 
+                    B              0             0               
     42 toc[CHINA,SAN_PABLO,TIERRA]
-                    NL             0             0                    -7.03014 
+                    B              0             0               
     43 toc[AUSTRALIA,SAN_PABLO,TIERRA]
-                    NL             0             0                    -7.16575 
+                    B              0             0               
     44 toc[NUEVA_ZELANDA,SAN_PABLO,TIERRA]
-                    NL             0             0                    -6.84932 
+                    B              0             0               
     45 toc[ARGENTINA,SAN_PABLO,MAR]
                     NL             0             0                   -0.261644 
     46 toc[URUGUAY,SAN_PABLO,MAR]
@@ -232,15 +648,15 @@ Objective:  z = 7870.208219 (MAXimum)
     54 toc[CANADA,SAN_PABLO,MAR]
                     NL             0             0                   -0.745205 
     55 toc[ESPANA,SAN_PABLO,MAR]
-                    NL             0             0                    -7.58219 
+                    B              0             0               
     56 toc[REINO_UNIDO,SAN_PABLO,MAR]
                     NL             0             0                   -0.961644 
     57 toc[IRLANDA,SAN_PABLO,MAR]
-                    NL             0             0                    -7.59315 
+                    B              0             0               
     58 toc[PAISES_BAJOS,SAN_PABLO,MAR]
                     NL             0             0                   -0.943836 
     59 toc[ALEMANIA,SAN_PABLO,MAR]
-                    NL             0             0                    -7.59178 
+                    B              0             0               
     60 toc[TURQUIA,SAN_PABLO,MAR]
                     NL             0             0                    -1.14521 
     61 toc[ISRAEL,SAN_PABLO,MAR]
@@ -250,11 +666,11 @@ Objective:  z = 7870.208219 (MAXimum)
     63 toc[JAPON,SAN_PABLO,MAR]
                     NL             0             0                   -0.689041 
     64 toc[CHINA,SAN_PABLO,MAR]
-                    NL             0             0                    -7.03014 
+                    B              0             0               
     65 toc[AUSTRALIA,SAN_PABLO,MAR]
-                    NL             0             0                    -7.16575 
+                    B              0             0               
     66 toc[NUEVA_ZELANDA,SAN_PABLO,MAR]
-                    NL             0             0                    -6.84932 
+                    B              0             0               
     67 toc[ARGENTINA,PANAMA,AIRE]
                     NL             0             0                   -0.612329 
     68 toc[URUGUAY,PANAMA,AIRE]
@@ -266,7 +682,7 @@ Objective:  z = 7870.208219 (MAXimum)
     71 toc[COLOMBIA,PANAMA,AIRE]
                     NL             0             0                   -0.039726 
     72 toc[PANAMA,PANAMA,AIRE]
-                    B             90             0               
+                    NL             0             0                       < eps
     73 toc[REPUBLICA_DOMINICANA,PANAMA,AIRE]
                     NL             0             0                   -0.130137 
     74 toc[MEXICO,PANAMA,AIRE]
@@ -276,15 +692,15 @@ Objective:  z = 7870.208219 (MAXimum)
     76 toc[CANADA,PANAMA,AIRE]
                     NL             0             0                   -0.273973 
     77 toc[ESPANA,PANAMA,AIRE]
-                    NL             0             0                    -7.20137 
+                    B              0             0               
     78 toc[REINO_UNIDO,PANAMA,AIRE]
                     NL             0             0                   -0.883562 
     79 toc[IRLANDA,PANAMA,AIRE]
-                    NL             0             0                    -7.21233 
+                    B              0             0               
     80 toc[PAISES_BAJOS,PANAMA,AIRE]
                     NL             0             0                   -0.921918 
     81 toc[ALEMANIA,PANAMA,AIRE]
-                    NL             0             0                    -7.21096 
+                    B              0             0               
     82 toc[TURQUIA,PANAMA,AIRE]
                     NL             0             0                    -1.06986 
     83 toc[ISRAEL,PANAMA,AIRE]
@@ -294,55 +710,55 @@ Objective:  z = 7870.208219 (MAXimum)
     85 toc[JAPON,PANAMA,AIRE]
                     NL             0             0                   -0.838356 
     86 toc[CHINA,PANAMA,AIRE]
-                    NL             0             0                    -6.64932 
+                    B              0             0               
     87 toc[AUSTRALIA,PANAMA,AIRE]
                     NL             0             0                    -1.05753 
     88 toc[NUEVA_ZELANDA,PANAMA,AIRE]
                     NL             0             0                    -1.04932 
     89 toc[ARGENTINA,PANAMA,TIERRA]
-                    NL             0             0                    -6.52466 
+                    B              0             0               
     90 toc[URUGUAY,PANAMA,TIERRA]
-                    NL             0             0                    -6.58493 
+                    B              0             0               
     91 toc[CHILE,PANAMA,TIERRA]
-                    NL             0             0                    -6.72603 
+                    B              0             0               
     92 toc[BRASIL,PANAMA,TIERRA]
-                    NL             0             0                    -6.46849 
+                    B              0             0               
     93 toc[COLOMBIA,PANAMA,TIERRA]
-                    NL             0             0                    -6.77808 
+                    B              0             0               
     94 toc[PANAMA,PANAMA,TIERRA]
                     NL             0             0                       < eps
     95 toc[REPUBLICA_DOMINICANA,PANAMA,TIERRA]
-                    NL             0             0                    -6.74384 
+                    B              0             0               
     96 toc[MEXICO,PANAMA,TIERRA]
-                    NL             0             0                    -6.84932 
+                    B              0             0               
     97 toc[ESTADOS_UNIDOS,PANAMA,TIERRA]
-                    NL             0             0                    -6.91096 
+                    B              0             0               
     98 toc[CANADA,PANAMA,TIERRA]
-                    NL             0             0                    -6.86575 
+                    B              0             0               
     99 toc[ESPANA,PANAMA,TIERRA]
-                    NL             0             0                    -7.20137 
+                    B              0             0               
    100 toc[REINO_UNIDO,PANAMA,TIERRA]
-                    NL             0             0                    -7.12192 
+                    B              0             0               
    101 toc[IRLANDA,PANAMA,TIERRA]
-                    NL             0             0                    -7.21233 
+                    B              0             0               
    102 toc[PAISES_BAJOS,PANAMA,TIERRA]
-                    NL             0             0                    -7.25616 
+                    B              0             0               
    103 toc[ALEMANIA,PANAMA,TIERRA]
-                    NL             0             0                    -7.21096 
+                    B              0             0               
    104 toc[TURQUIA,PANAMA,TIERRA]
-                    NL             0             0                    -7.32329 
+                    B              0             0               
    105 toc[ISRAEL,PANAMA,TIERRA]
-                    NL             0             0                    -7.16164 
+                    B              0             0               
    106 toc[TAIWAN,PANAMA,TIERRA]
-                    NL             0             0                    -6.71096 
+                    B              0             0               
    107 toc[JAPON,PANAMA,TIERRA]
-                    NL             0             0                    -6.80822 
+                    B              0             0               
    108 toc[CHINA,PANAMA,TIERRA]
-                    NL             0             0                    -6.64932 
+                    B              0             0               
    109 toc[AUSTRALIA,PANAMA,TIERRA]
-                    NL             0             0                    -6.78493 
+                    B              0             0               
    110 toc[NUEVA_ZELANDA,PANAMA,TIERRA]
-                    NL             0             0                    -6.46849 
+                    B              0             0               
    111 toc[ARGENTINA,PANAMA,MAR]
                     NL             0             0                  -0.0972603 
    112 toc[URUGUAY,PANAMA,MAR]
@@ -354,7 +770,7 @@ Objective:  z = 7870.208219 (MAXimum)
    115 toc[COLOMBIA,PANAMA,MAR]
                     B             65             0               
    116 toc[PANAMA,PANAMA,MAR]
-                    NL             0             0                       < eps
+                    B             90             0               
    117 toc[REPUBLICA_DOMINICANA,PANAMA,MAR]
                     NL             0             0                  -0.0589041 
    118 toc[MEXICO,PANAMA,MAR]
@@ -364,15 +780,15 @@ Objective:  z = 7870.208219 (MAXimum)
    120 toc[CANADA,PANAMA,MAR]
                     NL             0             0                   -0.113699 
    121 toc[ESPANA,PANAMA,MAR]
-                    NL             0             0                    -7.20137 
+                    B              0             0               
    122 toc[REINO_UNIDO,PANAMA,MAR]
                     NL             0             0                   -0.456164 
    123 toc[IRLANDA,PANAMA,MAR]
-                    NL             0             0                    -7.21233 
+                    B              0             0               
    124 toc[PAISES_BAJOS,PANAMA,MAR]
                     NL             0             0                   -0.767123 
    125 toc[ALEMANIA,PANAMA,MAR]
-                    NL             0             0                    -7.21096 
+                    B              0             0               
    126 toc[TURQUIA,PANAMA,MAR]
                     NL             0             0                   -0.694521 
    127 toc[ISRAEL,PANAMA,MAR]
@@ -382,7 +798,7 @@ Objective:  z = 7870.208219 (MAXimum)
    129 toc[JAPON,PANAMA,MAR]
                     NL             0             0                   -0.257534 
    130 toc[CHINA,PANAMA,MAR]
-                    NL             0             0                    -6.64932 
+                    B              0             0               
    131 toc[AUSTRALIA,PANAMA,MAR]
                     NL             0             0                   -0.642466 
    132 toc[NUEVA_ZELANDA,PANAMA,MAR]
@@ -408,15 +824,15 @@ Objective:  z = 7870.208219 (MAXimum)
    142 toc[CANADA,NUEVA_YORK,AIRE]
                     NL             0             0                  -0.0561644 
    143 toc[ESPANA,NUEVA_YORK,AIRE]
-                    NL             0             0                    -7.13973 
+                    B              0             0               
    144 toc[REINO_UNIDO,NUEVA_YORK,AIRE]
                     NL             0             0                   -0.724658 
    145 toc[IRLANDA,NUEVA_YORK,AIRE]
-                    NL             0             0                    -7.15068 
+                    B              0             0               
    146 toc[PAISES_BAJOS,NUEVA_YORK,AIRE]
                     NL             0             0                   -0.989041 
    147 toc[ALEMANIA,NUEVA_YORK,AIRE]
-                    NL             0             0                    -7.14932 
+                    B              0             0               
    148 toc[TURQUIA,NUEVA_YORK,AIRE]
                     NL             0             0                   -0.849315 
    149 toc[ISRAEL,NUEVA_YORK,AIRE]
@@ -426,25 +842,25 @@ Objective:  z = 7870.208219 (MAXimum)
    151 toc[JAPON,NUEVA_YORK,AIRE]
                     NL             0             0                    -1.71233 
    152 toc[CHINA,NUEVA_YORK,AIRE]
-                    NL             0             0                    -6.58767 
+                    B              0             0               
    153 toc[AUSTRALIA,NUEVA_YORK,AIRE]
-                    NL             0             0                    -6.72329 
+                    B              0             0               
    154 toc[NUEVA_ZELANDA,NUEVA_YORK,AIRE]
-                    NL             0             0                    -6.40685 
+                    B              0             0               
    155 toc[ARGENTINA,NUEVA_YORK,TIERRA]
-                    NL             0             0                    -6.46301 
+                    B              0             0               
    156 toc[URUGUAY,NUEVA_YORK,TIERRA]
-                    NL             0             0                    -6.52329 
+                    B              0             0               
    157 toc[CHILE,NUEVA_YORK,TIERRA]
-                    NL             0             0                    -6.66438 
+                    B              0             0               
    158 toc[BRASIL,NUEVA_YORK,TIERRA]
-                    NL             0             0                    -6.40685 
+                    B              0             0               
    159 toc[COLOMBIA,NUEVA_YORK,TIERRA]
-                    NL             0             0                    -6.71644 
+                    B              0             0               
    160 toc[PANAMA,NUEVA_YORK,TIERRA]
                     NL             0             0                   -0.284932 
    161 toc[REPUBLICA_DOMINICANA,NUEVA_YORK,TIERRA]
-                    NL             0             0                    -6.68219 
+                    B              0             0               
    162 toc[MEXICO,NUEVA_YORK,TIERRA]
                     NL             0             0                   -0.272603 
    163 toc[ESTADOS_UNIDOS,NUEVA_YORK,TIERRA]
@@ -452,29 +868,29 @@ Objective:  z = 7870.208219 (MAXimum)
    164 toc[CANADA,NUEVA_YORK,TIERRA]
                     NL             0             0                   -0.109589 
    165 toc[ESPANA,NUEVA_YORK,TIERRA]
-                    NL             0             0                    -7.13973 
+                    B              0             0               
    166 toc[REINO_UNIDO,NUEVA_YORK,TIERRA]
-                    NL             0             0                    -7.06027 
+                    B              0             0               
    167 toc[IRLANDA,NUEVA_YORK,TIERRA]
-                    NL             0             0                    -7.15068 
+                    B              0             0               
    168 toc[PAISES_BAJOS,NUEVA_YORK,TIERRA]
-                    NL             0             0                    -7.19452 
+                    B              0             0               
    169 toc[ALEMANIA,NUEVA_YORK,TIERRA]
-                    NL             0             0                    -7.14932 
+                    B              0             0               
    170 toc[TURQUIA,NUEVA_YORK,TIERRA]
-                    NL             0             0                    -7.26164 
+                    B              0             0               
    171 toc[ISRAEL,NUEVA_YORK,TIERRA]
-                    NL             0             0                        -7.1 
+                    B              0             0               
    172 toc[TAIWAN,NUEVA_YORK,TIERRA]
-                    NL             0             0                    -6.64932 
+                    B              0             0               
    173 toc[JAPON,NUEVA_YORK,TIERRA]
-                    NL             0             0                    -6.74658 
+                    B              0             0               
    174 toc[CHINA,NUEVA_YORK,TIERRA]
-                    NL             0             0                    -6.58767 
+                    B              0             0               
    175 toc[AUSTRALIA,NUEVA_YORK,TIERRA]
-                    NL             0             0                    -6.72329 
+                    B              0             0               
    176 toc[NUEVA_ZELANDA,NUEVA_YORK,TIERRA]
-                    NL             0             0                    -6.40685 
+                    B              0             0               
    177 toc[ARGENTINA,NUEVA_YORK,MAR]
                     B             75             0               
    178 toc[URUGUAY,NUEVA_YORK,MAR]
@@ -496,15 +912,15 @@ Objective:  z = 7870.208219 (MAXimum)
    186 toc[CANADA,NUEVA_YORK,MAR]
                     B           1100             0               
    187 toc[ESPANA,NUEVA_YORK,MAR]
-                    NL             0             0                    -7.13973 
+                    B              0             0               
    188 toc[REINO_UNIDO,NUEVA_YORK,MAR]
                     NL             0             0                   -0.421918 
    189 toc[IRLANDA,NUEVA_YORK,MAR]
-                    NL             0             0                    -7.15068 
+                    B              0             0               
    190 toc[PAISES_BAJOS,NUEVA_YORK,MAR]
                     NL             0             0                   -0.538356 
    191 toc[ALEMANIA,NUEVA_YORK,MAR]
-                    NL             0             0                    -7.14932 
+                    B              0             0               
    192 toc[TURQUIA,NUEVA_YORK,MAR]
                     NL             0             0                   -0.569863 
    193 toc[ISRAEL,NUEVA_YORK,MAR]
@@ -514,11 +930,11 @@ Objective:  z = 7870.208219 (MAXimum)
    195 toc[JAPON,NUEVA_YORK,MAR]
                     NL             0             0                   -0.950685 
    196 toc[CHINA,NUEVA_YORK,MAR]
-                    NL             0             0                    -6.58767 
+                    B              0             0               
    197 toc[AUSTRALIA,NUEVA_YORK,MAR]
-                    NL             0             0                    -6.72329 
+                    B              0             0               
    198 toc[NUEVA_ZELANDA,NUEVA_YORK,MAR]
-                    NL             0             0                    -6.40685 
+                    B              0             0               
    199 toc[ARGENTINA,AMSTERDAM,AIRE]
                     NL             0             0                    -1.46849 
    200 toc[URUGUAY,AMSTERDAM,AIRE]
@@ -564,49 +980,49 @@ Objective:  z = 7870.208219 (MAXimum)
    220 toc[NUEVA_ZELANDA,AMSTERDAM,AIRE]
                     NL             0             0                   -0.753425 
    221 toc[ARGENTINA,AMSTERDAM,TIERRA]
-                    NL             0             0                    -6.11781 
+                    B              0             0               
    222 toc[URUGUAY,AMSTERDAM,TIERRA]
-                    NL             0             0                    -6.17808 
+                    B              0             0               
    223 toc[CHILE,AMSTERDAM,TIERRA]
-                    NL             0             0                    -6.31918 
+                    B              0             0               
    224 toc[BRASIL,AMSTERDAM,TIERRA]
-                    NL             0             0                    -6.06164 
+                    B              0             0               
    225 toc[COLOMBIA,AMSTERDAM,TIERRA]
-                    NL             0             0                    -6.37123 
+                    B              0             0               
    226 toc[PANAMA,AMSTERDAM,TIERRA]
-                    NL             0             0                    -6.44247 
+                    B              0             0               
    227 toc[REPUBLICA_DOMINICANA,AMSTERDAM,TIERRA]
-                    NL             0             0                    -6.33699 
+                    B              0             0               
    228 toc[MEXICO,AMSTERDAM,TIERRA]
-                    NL             0             0                    -6.44247 
+                    B              0             0               
    229 toc[ESTADOS_UNIDOS,AMSTERDAM,TIERRA]
-                    NL             0             0                    -6.50411 
+                    B              0             0               
    230 toc[CANADA,AMSTERDAM,TIERRA]
-                    NL             0             0                     -6.4589 
+                    B              0             0               
    231 toc[ESPANA,AMSTERDAM,TIERRA]
                     NL             0             0                  -0.0986301 
    232 toc[REINO_UNIDO,AMSTERDAM,TIERRA]
                     NL             0             0                  -0.0794521 
    233 toc[IRLANDA,AMSTERDAM,TIERRA]
-                    NL             0             0                    -6.80548 
+                    B              0             0               
    234 toc[PAISES_BAJOS,AMSTERDAM,TIERRA]
                     B            540             0               
    235 toc[ALEMANIA,AMSTERDAM,TIERRA]
                     B            360             0               
    236 toc[TURQUIA,AMSTERDAM,TIERRA]
-                    NL             0             0                    -6.91644 
+                    B              0             0               
    237 toc[ISRAEL,AMSTERDAM,TIERRA]
-                    NL             0             0                    -6.75479 
+                    B              0             0               
    238 toc[TAIWAN,AMSTERDAM,TIERRA]
-                    NL             0             0                    -6.30411 
+                    B              0             0               
    239 toc[JAPON,AMSTERDAM,TIERRA]
-                    NL             0             0                    -6.40137 
+                    B              0             0               
    240 toc[CHINA,AMSTERDAM,TIERRA]
-                    NL             0             0                    -6.24247 
+                    B              0             0               
    241 toc[AUSTRALIA,AMSTERDAM,TIERRA]
-                    NL             0             0                    -6.37808 
+                    B              0             0               
    242 toc[NUEVA_ZELANDA,AMSTERDAM,TIERRA]
-                    NL             0             0                    -6.06164 
+                    B              0             0               
    243 toc[ARGENTINA,AMSTERDAM,MAR]
                     NL             0             0                   -0.767123 
    244 toc[URUGUAY,AMSTERDAM,MAR]
@@ -696,49 +1112,49 @@ Objective:  z = 7870.208219 (MAXimum)
    286 toc[NUEVA_ZELANDA,ESTAMBUL,AIRE]
                     NL             0             0                   -0.775342 
    287 toc[ARGENTINA,ESTAMBUL,TIERRA]
-                    NL             0             0                    -6.05068 
+                    B              0             0               
    288 toc[URUGUAY,ESTAMBUL,TIERRA]
-                    NL             0             0                    -6.11096 
+                    B              0             0               
    289 toc[CHILE,ESTAMBUL,TIERRA]
-                    NL             0             0                    -6.25205 
+                    B              0             0               
    290 toc[BRASIL,ESTAMBUL,TIERRA]
-                    NL             0             0                    -5.99452 
+                    B              0             0               
    291 toc[COLOMBIA,ESTAMBUL,TIERRA]
-                    NL             0             0                    -6.30411 
+                    B              0             0               
    292 toc[PANAMA,ESTAMBUL,TIERRA]
-                    NL             0             0                    -6.37534 
+                    B              0             0               
    293 toc[REPUBLICA_DOMINICANA,ESTAMBUL,TIERRA]
-                    NL             0             0                    -6.26986 
+                    B              0             0               
    294 toc[MEXICO,ESTAMBUL,TIERRA]
-                    NL             0             0                    -6.37534 
+                    B              0             0               
    295 toc[ESTADOS_UNIDOS,ESTAMBUL,TIERRA]
-                    NL             0             0                    -6.43699 
+                    B              0             0               
    296 toc[CANADA,ESTAMBUL,TIERRA]
-                    NL             0             0                    -6.39178 
+                    B              0             0               
    297 toc[ESPANA,ESTAMBUL,TIERRA]
-                    NL             0             0                     -6.7274 
+                    B              0             0               
    298 toc[REINO_UNIDO,ESTAMBUL,TIERRA]
-                    NL             0             0                    -6.64795 
+                    B              0             0               
    299 toc[IRLANDA,ESTAMBUL,TIERRA]
-                    NL             0             0                    -6.73836 
+                    B              0             0               
    300 toc[PAISES_BAJOS,ESTAMBUL,TIERRA]
-                    NL             0             0                    -6.78219 
+                    B              0             0               
    301 toc[ALEMANIA,ESTAMBUL,TIERRA]
-                    NL             0             0                    -6.73699 
+                    B              0             0               
    302 toc[TURQUIA,ESTAMBUL,TIERRA]
                     B             10             0               
    303 toc[ISRAEL,ESTAMBUL,TIERRA]
                     NL             0             0                  -0.0876712 
    304 toc[TAIWAN,ESTAMBUL,TIERRA]
-                    NL             0             0                    -6.23699 
+                    B              0             0               
    305 toc[JAPON,ESTAMBUL,TIERRA]
-                    NL             0             0                    -6.33425 
+                    B              0             0               
    306 toc[CHINA,ESTAMBUL,TIERRA]
-                    NL             0             0                    -6.17534 
+                    B              0             0               
    307 toc[AUSTRALIA,ESTAMBUL,TIERRA]
-                    NL             0             0                    -6.31096 
+                    B              0             0               
    308 toc[NUEVA_ZELANDA,ESTAMBUL,TIERRA]
-                    NL             0             0                    -5.99452 
+                    B              0             0               
    309 toc[ARGENTINA,ESTAMBUL,MAR]
                     NL             0             0                    -0.39726 
    310 toc[URUGUAY,ESTAMBUL,MAR]
@@ -776,7 +1192,7 @@ Objective:  z = 7870.208219 (MAXimum)
    326 toc[TAIWAN,ESTAMBUL,MAR]
                     NL             0             0                   -0.343836 
    327 toc[JAPON,ESTAMBUL,MAR]
-                    B            638             0               
+                    NL             0             0                       < eps
    328 toc[CHINA,ESTAMBUL,MAR]
                     NL             0             0                    -1.05616 
    329 toc[AUSTRALIA,ESTAMBUL,MAR]
@@ -804,15 +1220,15 @@ Objective:  z = 7870.208219 (MAXimum)
    340 toc[CANADA,TOKIO,AIRE]
                     NL             0             0                   -0.938356 
    341 toc[ESPANA,TOKIO,AIRE]
-                    NL             0             0                    -7.24247 
+                    B              0             0               
    342 toc[REINO_UNIDO,TOKIO,AIRE]
                     NL             0             0                     -1.2863 
    343 toc[IRLANDA,TOKIO,AIRE]
-                    NL             0             0                    -7.25342 
+                    B              0             0               
    344 toc[PAISES_BAJOS,TOKIO,AIRE]
                     NL             0             0                    -1.34932 
    345 toc[ALEMANIA,TOKIO,AIRE]
-                    NL             0             0                    -7.25205 
+                    B              0             0               
    346 toc[TURQUIA,TOKIO,AIRE]
                     NL             0             0                    -2.56164 
    347 toc[ISRAEL,TOKIO,AIRE]
@@ -892,15 +1308,15 @@ Objective:  z = 7870.208219 (MAXimum)
    384 toc[CANADA,TOKIO,MAR]
                     NL             0             0                   -0.621918 
    385 toc[ESPANA,TOKIO,MAR]
-                    NL             0             0                    -7.24247 
+                    B              0             0               
    386 toc[REINO_UNIDO,TOKIO,MAR]
                     NL             0             0                   -0.838356 
    387 toc[IRLANDA,TOKIO,MAR]
-                    NL             0             0                    -7.25342 
+                    B              0             0               
    388 toc[PAISES_BAJOS,TOKIO,MAR]
                     NL             0             0                   -0.943836 
    389 toc[ALEMANIA,TOKIO,MAR]
-                    NL             0             0                    -7.25205 
+                    B              0             0               
    390 toc[TURQUIA,TOKIO,MAR]
                     NL             0             0                    -1.14932 
    391 toc[ISRAEL,TOKIO,MAR]
@@ -908,7 +1324,7 @@ Objective:  z = 7870.208219 (MAXimum)
    392 toc[TAIWAN,TOKIO,MAR]
                     B            344             0               
    393 toc[JAPON,TOKIO,MAR]
-                    NL             0             0                       < eps
+                    B            638             0               
    394 toc[CHINA,TOKIO,MAR]
                     NL             0             0                   -0.556164 
    395 toc[AUSTRALIA,TOKIO,MAR]
@@ -930,15 +1346,15 @@ Objective:  z = 7870.208219 (MAXimum)
    403 tcc[SAN_PABLO,SAN_PABLO,TIERRA]
                     NL             0             0                       < eps
    404 tcc[PANAMA,SAN_PABLO,TIERRA]
-                    NL             0             0                    -7.23014 
+                    B              0             0               
    405 tcc[NUEVA_YORK,SAN_PABLO,TIERRA]
-                    NL             0             0                    -7.29178 
+                    B              0             0               
    406 tcc[AMSTERDAM,SAN_PABLO,TIERRA]
-                    NL             0             0                    -7.80274 
+                    B              0             0               
    407 tcc[ESTAMBUL,SAN_PABLO,TIERRA]
-                    NL             0             0                    -7.70411 
+                    B              0             0               
    408 tcc[TOKIO,SAN_PABLO,TIERRA]
-                    NL             0             0                    -7.18904 
+                    B              0             0               
    409 tcc[SAN_PABLO,SAN_PABLO,MAR]
                     NL             0             0                       < eps
    410 tcc[PANAMA,SAN_PABLO,MAR]
@@ -962,13 +1378,13 @@ Objective:  z = 7870.208219 (MAXimum)
    419 tcc[SAN_PABLO,TOKIO,AIRE]
                     NL             0             0                   -0.816438 
    420 tcc[SAN_PABLO,PANAMA,TIERRA]
-                    NL             0             0                    -6.46849 
+                    B              0             0               
    421 tcc[SAN_PABLO,NUEVA_YORK,TIERRA]
-                    NL             0             0                    -6.40685 
+                    B              0             0               
    422 tcc[SAN_PABLO,AMSTERDAM,TIERRA]
-                    NL             0             0                    -6.06164 
+                    B              0             0               
    423 tcc[SAN_PABLO,ESTAMBUL,TIERRA]
-                    NL             0             0                    -5.99452 
+                    B              0             0               
    424 tcc[SAN_PABLO,TOKIO,TIERRA]
                     NL             0             0                    -6.50959 
    425 tcc[SAN_PABLO,PANAMA,MAR]
@@ -994,13 +1410,13 @@ Objective:  z = 7870.208219 (MAXimum)
    435 tcc[PANAMA,PANAMA,TIERRA]
                     NL             0             0                       < eps
    436 tcc[NUEVA_YORK,PANAMA,TIERRA]
-                    NL             0             0                    -6.91096 
+                    B              0             0               
    437 tcc[AMSTERDAM,PANAMA,TIERRA]
-                    NL             0             0                    -7.42192 
+                    B              0             0               
    438 tcc[ESTAMBUL,PANAMA,TIERRA]
-                    NL             0             0                    -7.32329 
+                    B              0             0               
    439 tcc[TOKIO,PANAMA,TIERRA]
-                    NL             0             0                    -6.80822 
+                    B              0             0               
    440 tcc[PANAMA,PANAMA,MAR]
                     NL             0             0                       < eps
    441 tcc[NUEVA_YORK,PANAMA,MAR]
@@ -1022,9 +1438,9 @@ Objective:  z = 7870.208219 (MAXimum)
    449 tcc[PANAMA,NUEVA_YORK,TIERRA]
                     NL             0             0                   -0.284932 
    450 tcc[PANAMA,AMSTERDAM,TIERRA]
-                    NL             0             0                    -6.44247 
+                    B              0             0               
    451 tcc[PANAMA,ESTAMBUL,TIERRA]
-                    NL             0             0                    -6.37534 
+                    B              0             0               
    452 tcc[PANAMA,TOKIO,TIERRA]
                     NL             0             0                    -6.89041 
    453 tcc[PANAMA,NUEVA_YORK,MAR]
@@ -1046,11 +1462,11 @@ Objective:  z = 7870.208219 (MAXimum)
    461 tcc[NUEVA_YORK,NUEVA_YORK,TIERRA]
                     NL             0             0                       < eps
    462 tcc[AMSTERDAM,NUEVA_YORK,TIERRA]
-                    NL             0             0                    -7.36027 
+                    B              0             0               
    463 tcc[ESTAMBUL,NUEVA_YORK,TIERRA]
-                    NL             0             0                    -7.26164 
+                    B              0             0               
    464 tcc[TOKIO,NUEVA_YORK,TIERRA]
-                    NL             0             0                    -6.74658 
+                    B              0             0               
    465 tcc[NUEVA_YORK,NUEVA_YORK,MAR]
                     NL             0             0                       < eps
    466 tcc[AMSTERDAM,NUEVA_YORK,MAR]
@@ -1066,9 +1482,9 @@ Objective:  z = 7870.208219 (MAXimum)
    471 tcc[NUEVA_YORK,TOKIO,AIRE]
                     NL             0             0                   -0.883562 
    472 tcc[NUEVA_YORK,AMSTERDAM,TIERRA]
-                    NL             0             0                    -6.50411 
+                    B              0             0               
    473 tcc[NUEVA_YORK,ESTAMBUL,TIERRA]
-                    NL             0             0                    -6.43699 
+                    B              0             0               
    474 tcc[NUEVA_YORK,TOKIO,TIERRA]
                     NL             0             0                    -6.95205 
    475 tcc[NUEVA_YORK,AMSTERDAM,MAR]
@@ -1086,9 +1502,9 @@ Objective:  z = 7870.208219 (MAXimum)
    481 tcc[AMSTERDAM,AMSTERDAM,TIERRA]
                     NL             0             0                   -0.165753 
    482 tcc[ESTAMBUL,AMSTERDAM,TIERRA]
-                    NL             0             0                    -6.91644 
+                    B              0             0               
    483 tcc[TOKIO,AMSTERDAM,TIERRA]
-                    NL             0             0                    -6.40137 
+                    B              0             0               
    484 tcc[AMSTERDAM,AMSTERDAM,MAR]
                     NL             0             0                   -0.375342 
    485 tcc[ESTAMBUL,AMSTERDAM,MAR]
@@ -1100,7 +1516,7 @@ Objective:  z = 7870.208219 (MAXimum)
    488 tcc[AMSTERDAM,TOKIO,AIRE]
                     NL             0             0                    -1.51507 
    489 tcc[AMSTERDAM,ESTAMBUL,TIERRA]
-                    NL             0             0                    -6.94795 
+                    B              0             0               
    490 tcc[AMSTERDAM,TOKIO,TIERRA]
                     NL             0             0                    -7.46301 
    491 tcc[AMSTERDAM,ESTAMBUL,MAR]
@@ -1114,11 +1530,11 @@ Objective:  z = 7870.208219 (MAXimum)
    495 tcc[ESTAMBUL,ESTAMBUL,TIERRA]
                     NL             0             0                       < eps
    496 tcc[TOKIO,ESTAMBUL,TIERRA]
-                    NL             0             0                    -6.33425 
+                    B              0             0               
    497 tcc[ESTAMBUL,ESTAMBUL,MAR]
                     NL             0             0                   -0.275342 
    498 tcc[TOKIO,ESTAMBUL,MAR]
-                    B        145.792             0               
+                    B        783.792             0               
    499 tcc[ESTAMBUL,TOKIO,AIRE]
                     NL             0             0                    -2.56164 
    500 tcc[ESTAMBUL,TOKIO,TIERRA]
@@ -1138,11 +1554,11 @@ Objective:  z = 7870.208219 (MAXimum)
    507 tcd[SAN_PABLO,BUCAREST,AIRE]
                     NL             0             0                   -0.247945 
    508 tcd[SAN_PABLO,VARSOVIA,TIERRA]
-                    NL             0             0                    -5.84932 
+                    B              0             0               
    509 tcd[SAN_PABLO,BRATISLAVA,TIERRA]
-                    NL             0             0                    -5.84932 
+                    B              0             0               
    510 tcd[SAN_PABLO,BUCAREST,TIERRA]
-                    NL             0             0                    -5.84932 
+                    B              0             0               
    511 tcd[SAN_PABLO,VARSOVIA,MAR]
                     NL             0             0                    -5.84932 
    512 tcd[SAN_PABLO,BRATISLAVA,MAR]
@@ -1156,11 +1572,11 @@ Objective:  z = 7870.208219 (MAXimum)
    516 tcd[PANAMA,BUCAREST,AIRE]
                     NL             0             0                  -0.0479452 
    517 tcd[PANAMA,VARSOVIA,TIERRA]
-                    NL             0             0                    -6.23014 
+                    B              0             0               
    518 tcd[PANAMA,BRATISLAVA,TIERRA]
-                    NL             0             0                    -6.23014 
+                    B              0             0               
    519 tcd[PANAMA,BUCAREST,TIERRA]
-                    NL             0             0                    -6.23014 
+                    B              0             0               
    520 tcd[PANAMA,VARSOVIA,MAR]
                     NL             0             0                    -6.23014 
    521 tcd[PANAMA,BRATISLAVA,MAR]
@@ -1174,11 +1590,11 @@ Objective:  z = 7870.208219 (MAXimum)
    525 tcd[NUEVA_YORK,BUCAREST,AIRE]
                     B           2090             0               
    526 tcd[NUEVA_YORK,VARSOVIA,TIERRA]
-                    NL             0             0                    -6.29178 
+                    B              0             0               
    527 tcd[NUEVA_YORK,BRATISLAVA,TIERRA]
-                    NL             0             0                    -6.29178 
+                    B              0             0               
    528 tcd[NUEVA_YORK,BUCAREST,TIERRA]
-                    NL             0             0                    -6.29178 
+                    B              0             0               
    529 tcd[NUEVA_YORK,VARSOVIA,MAR]
                     NL             0             0                    -6.29178 
    530 tcd[NUEVA_YORK,BRATISLAVA,MAR]
@@ -1210,9 +1626,9 @@ Objective:  z = 7870.208219 (MAXimum)
    543 tcd[ESTAMBUL,BUCAREST,AIRE]
                     B            610             0               
    544 tcd[ESTAMBUL,VARSOVIA,TIERRA]
-                    NL             0             0                    -6.70411 
+                    B              0             0               
    545 tcd[ESTAMBUL,BRATISLAVA,TIERRA]
-                    NL             0             0                    -6.70411 
+                    B              0             0               
    546 tcd[ESTAMBUL,BUCAREST,TIERRA]
                     NL             0             0                  -0.0410959 
    547 tcd[ESTAMBUL,VARSOVIA,MAR]
@@ -1228,11 +1644,11 @@ Objective:  z = 7870.208219 (MAXimum)
    552 tcd[TOKIO,BUCAREST,AIRE]
                     NL             0             0                  -0.0794521 
    553 tcd[TOKIO,VARSOVIA,TIERRA]
-                    NL             0             0                    -6.18904 
+                    B              0             0               
    554 tcd[TOKIO,BRATISLAVA,TIERRA]
-                    NL             0             0                    -6.18904 
+                    B              0             0               
    555 tcd[TOKIO,BUCAREST,TIERRA]
-                    NL             0             0                    -6.18904 
+                    B              0             0               
    556 tcd[TOKIO,VARSOVIA,MAR]
                     NL             0             0                    -6.18904 
    557 tcd[TOKIO,BRATISLAVA,MAR]
@@ -1242,20 +1658,20 @@ Objective:  z = 7870.208219 (MAXimum)
 
 Karush-Kuhn-Tucker optimality conditions:
 
-KKT.PE: max.abs.err = 4.66e-10 on row 56
-        max.rel.err = 7.32e-14 on row 35
+KKT.PE: max.abs.err = 4.66e-10 on row 264
+        max.rel.err = 2.94e-15 on row 52
         High quality
 
 KKT.PB: max.abs.err = 0.00e+00 on row 0
         max.rel.err = 0.00e+00 on row 0
         High quality
 
-KKT.DE: max.abs.err = 1.15e-14 on column 312
-        max.rel.err = 4.26e-15 on column 312
+KKT.DE: max.abs.err = 9.83e-15 on column 178
+        max.rel.err = 5.21e-15 on column 178
         High quality
 
-KKT.DB: max.abs.err = 7.36e-15 on column 4
-        max.rel.err = 7.36e-15 on column 4
+KKT.DB: max.abs.err = 1.61e-15 on column 141
+        max.rel.err = 1.61e-15 on column 141
         High quality
 
 End of output
