@@ -31,6 +31,18 @@
 - mochila
 - secuenciamiento de tareas
 
+##### Travelings Salesman
+
+$$
+Yij = 1\{Se\ hace\ el\ tramo\ i,j\}
+\\
+\sum_{j=0}^{n}{Y_{ij}} = 1 \forall i ≤ 1
+\\
+\sum_{i=0}^{n}{Y_{ij}} = 1 \forall j ≤ 1
+\\
+mtz: u_i - u_j + n\ Y_{ij} = 0 \forall 1≤ i,j≤ n , i!=j
+$$
+
 #### Basic Assumptions
 
 - **Proportionality** : Both the benefit and use of resources are directly proportional to the **activity level**
